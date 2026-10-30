@@ -1,0 +1,282 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Spread It Sportsbook</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: scoreboard header band, three summary panels, then a grid of game cards read like betting slips */
+:root {
+  --bg: #f1f4f1;
+  --surface: #ffffff;
+  --ink: #14211a;
+  --muted: #5b6b62;
+  --line: #d8e0da;
+  --turf: #1d5c3b;
+  --turf-soft: #e3eee7;
+  --gold: #a8730c;
+  --gold-soft: #f6ecd6;
+  --warn: #9a3b16;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Barlow", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1411; --surface: #151f1a; --ink: #e5ece7; --muted: #93a39a; --line: #26332c;
+    --turf: #63c08a; --turf-soft: #1b2f24; --gold: #e2b44a; --gold-soft: #2e2716; --warn: #f08a5d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1411; --surface: #151f1a; --ink: #e5ece7; --muted: #93a39a; --line: #26332c;
+  --turf: #63c08a; --turf-soft: #1b2f24; --gold: #e2b44a; --gold-soft: #2e2716; --warn: #f08a5d;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { padding-block: 28px 18px; border-bottom: 3px solid var(--turf); }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--turf); }
+h1 { font: 800 clamp(40px, 8vw, 68px)/.95 var(--display); letter-spacing: .01em; text-transform: uppercase; margin: 8px 0 10px; text-wrap: balance; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: 14px; }
+.meta b { color: var(--ink); font-weight: 600; }
+main { display: grid; gap: 28px; padding-block: 24px 40px; }
+h2 { font: 800 22px/1 var(--display); text-transform: uppercase; letter-spacing: .03em; margin: 0 0 12px; }
+.panels { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; min-width: 0; }
+.panel ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.panel li { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; align-items: baseline; }
+.panel .sub { grid-column: 1 / -1; color: var(--muted); font-size: 13px; }
+.num { font: 500 14px var(--mono); font-variant-numeric: tabular-nums; }
+.tag { font: 500 11px var(--mono); color: var(--muted); margin-left: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.chip { font: 600 14px var(--body); padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--turf); border-color: var(--turf); color: var(--bg); }
+.chip:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); }
+@media (max-width: 420px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.card-top { padding: 14px 16px 12px; border-bottom: 1px dashed var(--line); }
+.kick { display: flex; justify-content: space-between; gap: 8px; font: 500 12px var(--mono); color: var(--muted); }
+.kick .label { color: var(--gold); text-transform: uppercase; letter-spacing: .06em; }
+.teams { display: flex; align-items: baseline; gap: 10px; margin-top: 6px; }
+.team { font: 800 34px/1 var(--display); letter-spacing: .02em; }
+.at { font: 600 18px var(--display); color: var(--muted); }
+.names { color: var(--muted); font-size: 13px; }
+.line { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--turf-soft); }
+.line div { padding: 8px 12px; min-width: 0; }
+.line div + div { border-left: 1px solid var(--line); }
+.line small { display: block; font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.rows { padding: 6px 16px 14px; display: grid; }
+.row { display: grid; grid-template-columns: 92px 1fr; gap: 10px; padding-block: 9px; border-bottom: 1px solid var(--line); }
+.row:last-child { border-bottom: 0; }
+.row dt { font: 500 11px/1.7 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.row dd { margin: 0; min-width: 0; }
+.pick { font-weight: 600; }
+.note { color: var(--muted); font-size: 13.5px; }
+.pct { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+.bar { flex: 1; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; max-width: 160px; }
+.bar i { display: block; height: 100%; background: var(--turf); }
+.td dd .pick { color: var(--turf); }
+.badge { display: inline-block; font: 500 11px var(--mono); padding: 2px 7px; border-radius: 3px; background: var(--gold-soft); color: var(--gold); margin-left: 6px; vertical-align: 1px; }
+.flag { margin: 0 16px 14px; padding: 8px 10px; border-radius: 4px; background: var(--gold-soft); color: var(--ink); font-size: 13px; }
+.flag b { color: var(--warn); }
+footer { border-top: 1px solid var(--line); padding-block: 18px 32px; color: var(--muted); font-size: 13px; }
+footer p { margin: 0 0 6px; max-width: 70ch; }
+.state { padding: 40px 0; color: var(--muted); }
+.split { display: grid; gap: 6px; }
+.split-row { display: grid; grid-template-columns: 52px 1fr; gap: 8px; align-items: center; font-size: 13px; }
+.split-row > span:first-child { font: 500 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.sbar { display: flex; height: 20px; border-radius: 3px; overflow: hidden; font: 500 11px/20px var(--mono); font-variant-numeric: tabular-nums; }
+.sbar span { padding: 0 6px; white-space: nowrap; min-width: 0; overflow: hidden; }
+.sbar .a { background: var(--line); color: var(--ink); }
+.sbar .h { background: var(--turf); color: var(--bg); text-align: right; }
+.sbar .dogside { background: var(--gold); color: var(--bg); }
+.picks { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+@media (max-width: 420px) { .picks { grid-template-columns: 1fr; } }
+.pk { background: var(--surface); padding: 12px 14px; min-width: 0; display: grid; gap: 4px; align-content: start; }
+.pk small { font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); }
+.pk .what { font: 800 19px/1.1 var(--display); letter-spacing: .02em; text-transform: uppercase; }
+.pk .why { color: var(--muted); font-size: 13px; }
+.conf { font: 500 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 1px 6px; border-radius: 3px; border: 1px solid currentColor; justify-self: start; }
+.conf.Strong { color: var(--turf); }
+.conf.Medium { color: var(--gold); }
+.conf.Lean { color: var(--muted); }
+.alert { display: inline-block; font: 600 12px var(--body); color: var(--gold); margin-top: 2px; }
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow" id="season">NFL · Loading</div>
+    <h1 id="headline">Spread It Sportsbook</h1>
+    <div class="meta" id="meta"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="sum-h">
+    <h2 id="sum-h">This week at a glance</h2>
+    <div class="panels" id="panels"></div>
+  </section>
+  <section aria-labelledby="games-h">
+    <h2 id="games-h">Every game</h2>
+    <div class="chips" role="group" aria-label="Filter by day" id="chips"></div>
+    <div class="grid" id="grid"><p class="state">Loading this week's board…</p></div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>Implied team totals come from the spread and over/under. Touchdown percentages are the sportsbook odds converted to a probability, so they include the book's margin. "No line yet" means books hadn't posted that prop when the board was built.</p>
+  <p>Smart bets weigh the line, line movement, where the money is going, matchups and injuries. Strong, Medium and Lean show how much the evidence agrees. Lines move with injury news. For entertainment; please bet responsibly.</p>
+</footer>
+
+<script>
+(function () {
+  var state = { day: "All" };
+  try { state.day = localStorage.getItem("edge-day") || "All"; } catch (e) {}
+  var data;
+
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function implied(g) {
+    var favT = (g.total + g.spread) / 2, dogT = g.total - favT;
+    var t = {}; t[g.fav] = favT; t[g.fav === g.home ? g.away : g.home] = dogT; return t;
+  }
+  function fmt(n) { return (Math.round(n * 2) / 2).toFixed(1).replace(".0", ""); }
+  function fmtDate(s) { var d = new Date(s + "T12:00:00"); return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); }
+
+  function renderHeader() {
+    document.getElementById("season").textContent = "NFL " + data.season + " · Week " + data.week + " Board";
+    document.getElementById("headline").textContent = "Spread It Sportsbook";
+    document.getElementById("meta").innerHTML =
+      "<span>Updated <b>" + esc(fmtDate(data.updated)) + "</b></span>" +
+      "<span>" + esc(data.oddsAsOf) + "</span>" +
+      (data.publicAsOf ? "<span>" + esc(data.publicAsOf) + "</span>" : "") +
+      (data.byes && data.byes.length ? "<span>Byes: <b>" + esc(data.byes.join(", ")) + "</b></span>" : "");
+  }
+
+  function renderPanels() {
+    var tds = data.games.filter(function (g) { return g.td && g.td.pct != null; })
+      .map(function (g) { return g.td; }).sort(function (a, b) { return b.pct - a.pct; }).slice(0, 5);
+    var defs = data.games.filter(function (g) { return g.defense && g.defense.team; }).map(function (g) {
+      var t = implied(g), opp = g.defense.team === g.home ? g.away : g.home;
+      return { team: g.defense.team, opp: opp, pts: t[opp] };
+    }).sort(function (a, b) { return a.pts - b.pts; }).slice(0, 5);
+
+    var html = "";
+    var rank = { Strong: 0, Medium: 1, Lean: 2 };
+    var top = data.games.filter(function (g) { return g.bet && g.bet.conf !== "Lean"; })
+      .sort(function (a, b) { return rank[a.bet.conf] - rank[b.bet.conf]; });
+    var topProps = data.games.filter(function (g) { return g.prop && g.prop.conf === "Strong"; });
+    html += '<div class="panel"><h2>Best bets of the week</h2><ol>' + top.map(function (g) {
+      return "<li><span>" + esc(g.bet.pick) + '<span class="tag">' + esc(g.away) + " at " + esc(g.home) + '</span></span><span class="num">' + esc(g.bet.odds) + "</span></li>";
+    }).join("") + topProps.map(function (g) {
+      return "<li><span>" + esc(g.prop.pick) + '<span class="tag">prop</span></span><span class="num">' + esc(g.prop.odds) + "</span></li>";
+    }).join("") + "</ol></div>";
+    html += '<div class="panel"><h2>Most likely TD scorers</h2><ol>' + tds.map(function (t) {
+      return "<li><span>" + esc(t.player) + '<span class="tag">' + esc(t.team) + " " + esc(t.pos) + '</span></span><span class="num">' + t.pct + "%</span></li>";
+    }).join("") + "</ol></div>";
+    html += '<div class="panel"><h2>QB rushing TD</h2><ol>' + data.qbRush.map(function (q) {
+      return "<li><span>" + esc(q.name) + '<span class="tag">' + esc(q.team) + '</span></span><span class="num">' + esc(q.odds) + '</span><span class="sub">' + esc(q.note) + "</span></li>";
+    }).join("") + "</ol></div>";
+    html += '<div class="panel"><h2>Best defensive spots</h2><ol>' + defs.map(function (d) {
+      return "<li><span>" + esc(d.team) + '<span class="tag">vs ' + esc(d.opp) + '</span></span><span class="num">opp ' + fmt(d.pts) + " pts</span></li>";
+    }).join("") + "</ol></div>";
+    var dogs = data.games.filter(function (g) { return g.public; }).map(function (g) {
+      var dog = g.fav === g.home ? g.away : g.home, side = dog === g.home ? "mlHome" : "mlAway";
+      var p = g.public[side];
+      return { dog: dog, fav: g.fav, bets: p.bets, money: p.money };
+    }).filter(function (x) { return x.bets > 50 || x.money > 50; })
+      .sort(function (a, b) { return Math.max(b.bets, b.money) - Math.max(a.bets, a.money); });
+    html += '<div class="panel"><h2>Public backing the underdog</h2>' + (dogs.length ? "<ol>" + dogs.map(function (x) {
+      return "<li><span>" + esc(x.dog) + '<span class="tag">over ' + esc(x.fav) + '</span></span><span class="num">' + x.bets + "% bets</span>" +
+        '<span class="sub">' + x.money + "% of the money on " + esc(x.dog) + " to win outright</span></li>";
+    }).join("") + "</ol>" : '<p class="note">The public is on the favorite in every game so far.</p>') + "</div>";
+    document.getElementById("panels").innerHTML = html;
+  }
+
+  function renderChips() {
+    var days = ["All"]; data.games.forEach(function (g) { if (days.indexOf(g.day) < 0) days.push(g.day); });
+    if (days.indexOf(state.day) < 0) state.day = "All";
+    var c = document.getElementById("chips");
+    c.innerHTML = days.map(function (d) {
+      return '<button class="chip" type="button" id="chip-' + d + '" aria-pressed="' + (d === state.day) + '" data-day="' + d + '">' + (d === "All" ? "All games" : d) + "</button>";
+    }).join("");
+  }
+
+  function sbar(g, a, hm) {
+    var dog = g.fav === g.home ? "a" : "h";
+    return '<div class="sbar"><span class="a' + (dog === "a" && a > 50 ? " dogside" : "") + '" style="flex:' + Math.max(a, 1) + '">' + esc(g.away) + " " + a + '%</span>' +
+      '<span class="h' + (dog === "h" && hm > 50 ? " dogside" : "") + '" style="flex:' + Math.max(hm, 1) + '">' + hm + "% " + esc(g.home) + "</span></div>";
+  }
+  function publicHtml(g) {
+    var p = g.public, dog = g.fav === g.home ? g.away : g.home;
+    var dp = dog === g.home ? p.mlHome : p.mlAway;
+    var h = '<div class="split">' +
+      '<div class="split-row"><span>Bets</span>' + sbar(g, p.mlAway.bets, p.mlHome.bets) + "</div>" +
+      '<div class="split-row"><span>Money</span>' + sbar(g, p.mlAway.money, p.mlHome.money) + "</div></div>";
+    if (dp.bets > 50 || dp.money > 50) h += '<span class="alert">Public is backing the underdog ' + esc(dog) + " to win</span>";
+    var dogAts = dog === g.home ? p.atsHome : p.atsAway;
+    h += '<div class="note">Spread: ' + dogAts.bets + "% of bets, " + dogAts.money + "% of money on " + esc(dog) + " +" + g.spread + "</div>";
+    return h;
+  }
+  function pk(label, sub, what, odds, conf, why) {
+    return '<div class="pk"><small>' + label + (sub ? " · " + esc(sub) : "") + '</small><span class="what">' + esc(what) + '</span>' +
+      '<span class="num">' + esc(odds) + '</span><span class="conf ' + esc(conf) + '">' + esc(conf) + '</span><span class="why">' + esc(why) + "</span></div>";
+  }
+  function picksHtml(g) {
+    if (!g.bet && !g.prop) return "";
+    return '<div class="picks">' +
+      (g.bet ? pk("Smart bet", g.bet.market, g.bet.pick, g.bet.odds, g.bet.conf, g.bet.why) : "") +
+      (g.prop ? pk("Smart prop", "", g.prop.pick, g.prop.odds, g.prop.conf, g.prop.why) : "") + "</div>";
+  }
+  function card(g) {
+    var t = implied(g);
+    var td = g.td || {};
+    var pctHtml = td.pct != null
+      ? '<div class="pct"><span class="bar"><i style="width:' + td.pct + '%"></i></span><span class="num">' + esc(td.odds) + (td.odds.indexOf("%") < 0 ? " · " + td.pct + "%" : "") + "</span></div>"
+      : '<div class="pct"><span class="num note">' + esc(td.odds || "No line yet") + "</span></div>";
+    var rows = [
+      ["Win", '<span class="pick">' + esc(g.winner) + '</span> <span class="note">' + (g.winner === g.fav ? "favored by " + g.spread : "underdog pick") + "</span>"],
+      ["Defense", (g.defense.team ? '<span class="pick">' + esc(g.defense.team) + "</span> " : '<span class="pick">Avoid both</span> ') + '<div class="note">' + esc(g.defense.note) + "</div>"],
+      ["Scheme edge", '<span class="pick">' + esc(g.scheme.player) + '</span><span class="tag">' + esc(g.scheme.team) + " " + esc(g.scheme.pos) + '</span><div class="note">' + esc(g.scheme.note) + "</div>"],
+      ["TD scorer", '<span class="pick">' + esc(td.player) + '</span><span class="tag">' + esc(td.team) + " " + esc(td.pos) + "</span>" + pctHtml + (g.alt ? '<div class="note">Next: ' + esc(g.alt) + "</div>" : ""), "td"]
+    ];
+    if (g.public) rows.splice(1, 0, ["Public", publicHtml(g), "pub"]);
+    else rows.splice(1, 0, ["Public", '<span class="note">Splits not posted yet</span>']);
+    if (g.qb) rows.push(["QB rush", '<span class="note">' + esc(g.qb) + "</span>"]);
+    return '<article class="card"><div class="card-top"><div class="kick"><span>' + esc(g.kickoff) + "</span>" +
+      (g.label ? '<span class="label">' + esc(g.label) + "</span>" : "") +
+      '</div><div class="teams"><span class="team">' + esc(g.away) + '</span><span class="at">at</span><span class="team">' + esc(g.home) + "</span></div>" +
+      '<div class="names">' + esc(g.awayName) + " at " + esc(g.homeName) + "</div></div>" +
+      '<div class="line"><div><small>Spread</small><span class="num">' + esc(g.fav) + " −" + g.spread + "</span></div>" +
+      "<div><small>Total</small><span class=\"num\">" + g.total + "</span></div>" +
+      "<div><small>Implied</small><span class=\"num\">" + esc(g.away) + " " + fmt(t[g.away]) + " · " + esc(g.home) + " " + fmt(t[g.home]) + "</span></div></div>" +
+      picksHtml(g) +
+      '<dl class="rows">' + rows.map(function (r) { return '<div class="row' + (r[2] ? " " + r[2] : "") + '"><dt>' + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("") + "</dl>" +
+      (g.flag ? '<div class="flag"><b>Watch:</b> ' + esc(g.flag) + "</div>" : "") + "</article>";
+  }
+
+  function renderGrid() {
+    var list = data.games.filter(function (g) { return state.day === "All" || g.day === state.day; });
+    document.getElementById("grid").innerHTML = list.map(card).join("");
+  }
+
+  document.getElementById("chips").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-day]"); if (!b) return;
+    state.day = b.getAttribute("data-day");
+    try { localStorage.setItem("edge-day", state.day); } catch (err) {}
+    renderChips(); renderGrid();
+  });
+
+  fetch("data.json", { cache: "no-store" }).then(function (r) {
+    if (!r.ok) throw new Error(r.status); return r.json();
+  }).then(function (d) {
+    data = d; renderHeader(); renderPanels(); renderChips(); renderGrid();
+  }).catch(function () {
+    document.getElementById("grid").innerHTML = '<p class="state">This week\'s picks couldn\'t load. Refresh the page to try again.</p>';
+  });
+})();
+</script>
+
+</body></html>
