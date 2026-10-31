@@ -1,0 +1,176 @@
+{
+ "sport": "nba",
+ "updated": "2026-10-31",
+ "slate": "Saturday, Oct 31",
+ "note": "Season averages from Basketball-Reference through Oct 29. Win probabilities from Sportradar. Props are milestone bets (for example, 20+ points), which most sportsbooks offer. Check injury news before tip-off.",
+ "games": [
+  {
+   "id": "nba-2026-10-31-POR-UTA",
+   "date": "2026-10-31",
+   "tip": "Sat Oct 31 · 12:00 PM PT",
+   "away": "POR",
+   "home": "UTA",
+   "awayName": "Portland Trail Blazers",
+   "homeName": "Utah Jazz",
+   "prob": {
+    "away": 68.2,
+    "home": 31.8
+   },
+   "props": [
+    {
+     "player": "Keyonte George",
+     "team": "UTA",
+     "prop": "20+ points",
+     "avg": 24.4,
+     "stat": "pts",
+     "conf": "Medium",
+     "why": "Averaging 24.4 points on 33 minutes a night and runs Utah's offense (6.8 assists). Utah are underdogs, which usually keeps his usage high."
+    }
+   ]
+  },
+  {
+   "id": "nba-2026-10-31-PHI-CHA",
+   "date": "2026-10-31",
+   "tip": "Sat Oct 31 · 3:00 PM PT",
+   "away": "PHI",
+   "home": "CHA",
+   "awayName": "Philadelphia 76ers",
+   "homeName": "Charlotte Hornets",
+   "prob": {
+    "away": 52.3,
+    "home": 47.7
+   },
+   "props": [
+    {
+     "player": "Tyrese Maxey",
+     "team": "PHI",
+     "prop": "25+ points",
+     "avg": 28.4,
+     "stat": "pts",
+     "conf": "Medium",
+     "why": "Averaging 28.4 points in 37.6 minutes a night. Philadelphia are missing rotation players, which pushes more shots his way."
+    }
+   ]
+  },
+  {
+   "id": "nba-2026-10-31-ATL-NOP",
+   "date": "2026-10-31",
+   "tip": "Sat Oct 31 · 4:00 PM PT",
+   "away": "ATL",
+   "home": "NOP",
+   "awayName": "Atlanta Hawks",
+   "homeName": "New Orleans Pelicans",
+   "prob": {
+    "away": 60.8,
+    "home": 39.2
+   },
+   "props": [
+    {
+     "player": "Jalen Johnson",
+     "team": "ATL",
+     "prop": "8+ rebounds",
+     "avg": 9.3,
+     "stat": "reb",
+     "conf": "Medium",
+     "why": "Averaging 9.3 rebounds (and 8.7 assists) over 6 games in 33 minutes a night."
+    }
+   ]
+  },
+  {
+   "id": "nba-2026-10-31-CLE-MIL",
+   "date": "2026-10-31",
+   "tip": "Sat Oct 31 · 5:00 PM PT",
+   "away": "CLE",
+   "home": "MIL",
+   "awayName": "Cleveland Cavaliers",
+   "homeName": "Milwaukee Bucks",
+   "prob": {
+    "away": 76.4,
+    "home": 23.6
+   },
+   "props": [
+    {
+     "player": "Donovan Mitchell",
+     "team": "CLE",
+     "prop": "20+ points",
+     "avg": 24.2,
+     "stat": "pts",
+     "conf": "Medium",
+     "why": "Averaging 24.2 points with 2.4 threes a game. Milwaukee just gave up 132 points to Houston."
+    }
+   ]
+  },
+  {
+   "id": "nba-2026-10-31-SAC-MEM",
+   "date": "2026-10-31",
+   "tip": "Sat Oct 31 · 5:00 PM PT",
+   "away": "SAC",
+   "home": "MEM",
+   "awayName": "Sacramento Kings",
+   "homeName": "Memphis Grizzlies",
+   "prob": {
+    "away": 18.9,
+    "home": 81.1
+   },
+   "props": [
+    {
+     "player": "Domantas Sabonis",
+     "team": "SAC",
+     "prop": "12+ rebounds",
+     "avg": 16.2,
+     "stat": "reb",
+     "conf": "Strong",
+     "why": "Averaging 16.2 rebounds in nearly 37 minutes a night. The milestone sits about 4 below his average."
+    }
+   ]
+  },
+  {
+   "id": "nba-2026-10-31-MIN-SAS",
+   "date": "2026-10-31",
+   "tip": "Sat Oct 31 · 5:00 PM PT",
+   "away": "MIN",
+   "home": "SAS",
+   "awayName": "Minnesota Timberwolves",
+   "homeName": "San Antonio Spurs",
+   "prob": {
+    "away": 15.8,
+    "home": 84.2
+   },
+   "props": [
+    {
+     "player": "Victor Wembanyama",
+     "team": "SAS",
+     "prop": "10+ rebounds",
+     "avg": 11.4,
+     "stat": "reb",
+     "conf": "Medium",
+     "why": "Averaging 25.0 points and 11.4 rebounds. Minnesota are without Anthony Edwards (knee surgery) and San Antonio are 84% favorites."
+    }
+   ]
+  },
+  {
+   "id": "nba-2026-10-31-OKC-HOU",
+   "date": "2026-10-31",
+   "tip": "Sat Oct 31 · 5:30 PM PT",
+   "away": "OKC",
+   "home": "HOU",
+   "awayName": "Oklahoma City Thunder",
+   "homeName": "Houston Rockets",
+   "prob": {
+    "away": 42.8,
+    "home": 57.2
+   },
+   "props": [
+    {
+     "player": "Alperen Şengün",
+     "team": "HOU",
+     "prop": "20+ points",
+     "avg": 24.5,
+     "stat": "pts",
+     "conf": "Medium",
+     "why": "Averaging 24.5 points, 9.0 rebounds and 7.0 assists. Oklahoma City scored just 96 in a loss at Dallas on Wednesday."
+    }
+   ]
+  }
+ ]
+}

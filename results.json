@@ -1,0 +1,53 @@
+{
+ "updated": "2026-10-31T01:30:00-07:00",
+ "games": {
+  "nfl-2026-w8-CAR-GB": {
+   "status": "final",
+   "away": 19,
+   "home": 27,
+   "detail": "Final"
+  },
+  "soc-laliga-2026-10-30-VIL-ESP": {
+   "status": "final",
+   "home": 0,
+   "away": 1,
+   "detail": "FT"
+  },
+  "soc-bundesliga-2026-10-30-SVE-M05": {
+   "status": "final",
+   "home": 4,
+   "away": 1,
+   "detail": "FT"
+  }
+ },
+ "picks": {
+  "nfl-2026-w8-CAR-GB-win": {
+   "r": "hit",
+   "sport": "nfl",
+   "date": "2026-10-29",
+   "label": "Packers to win",
+   "note": "GB 27–19"
+  },
+  "nfl-2026-w8-CAR-GB-bet": {
+   "r": "miss",
+   "sport": "nfl",
+   "date": "2026-10-29",
+   "label": "Panthers +3.5",
+   "note": "Lost by 8"
+  },
+  "nfl-2026-w8-CAR-GB-prop": {
+   "r": "hit",
+   "sport": "nfl",
+   "date": "2026-10-29",
+   "label": "Josh Jacobs anytime TD",
+   "note": "2 TDs (1 rush, 1 catch)"
+  },
+  "nfl-2026-w8-CAR-GB-td": {
+   "r": "hit",
+   "sport": "nfl",
+   "date": "2026-10-29",
+   "label": "Josh Jacobs anytime TD",
+   "note": "2 TDs (1 rush, 1 catch)"
+  }
+ }
+}

@@ -1,0 +1,934 @@
+{
+ "season": 2026,
+ "week": 8,
+ "updated": "2026-10-28",
+ "oddsAsOf": "Consensus lines as of Oct 27, 2026",
+ "byes": [
+  "HOU",
+  "NO",
+  "NYG",
+  "SF"
+ ],
+ "qbRush": [
+  {
+   "name": "Josh Allen",
+   "team": "BUF",
+   "pct": 62,
+   "odds": "62%",
+   "note": "Best QB rushing TD bet of the week"
+  },
+  {
+   "name": "Jayden Daniels",
+   "team": "WAS",
+   "pct": 33,
+   "odds": "33%",
+   "note": "Solid second option vs. PHI"
+  },
+  {
+   "name": "Drake Maye",
+   "team": "NE",
+   "pct": null,
+   "odds": "No line yet",
+   "note": "Long shot; was ~31% earlier this season"
+  },
+  {
+   "name": "Jordan Love / Bryce Young",
+   "team": "GB / CAR",
+   "pct": 13,
+   "odds": "+650",
+   "note": "Avoid"
+  }
+ ],
+ "games": [
+  {
+   "day": "Thu",
+   "kickoff": "Thu Oct 29 · 5:15 PM PT",
+   "label": "Thursday Night",
+   "away": "CAR",
+   "home": "GB",
+   "awayName": "Panthers",
+   "homeName": "Packers",
+   "fav": "GB",
+   "spread": 3.5,
+   "total": 47.5,
+   "mlAway": "+154",
+   "mlHome": "-185",
+   "winner": "GB",
+   "defense": {
+    "team": "GB",
+    "note": "Carolina lost the turnover battle 4-0 in a 43-13 loss last week."
+   },
+   "scheme": {
+    "player": "Josh Jacobs",
+    "team": "GB",
+    "pos": "RB",
+    "note": "Carolina just allowed 258 rushing yards to Tampa Bay."
+   },
+   "td": {
+    "player": "Josh Jacobs",
+    "team": "GB",
+    "pos": "RB",
+    "pct": 58,
+    "odds": "58%"
+   },
+   "alt": "Chuba Hubbard 56%",
+   "qb": "Love and Young both +650. Pass.",
+   "public": {
+    "mlAway": {
+     "bets": 22,
+     "money": 24
+    },
+    "mlHome": {
+     "bets": 78,
+     "money": 76
+    },
+    "atsAway": {
+     "bets": 66,
+     "money": 71
+    },
+    "atsHome": {
+     "bets": 34,
+     "money": 29
+    }
+   },
+   "bet": {
+    "market": "Spread",
+    "pick": "Panthers +3.5",
+    "odds": "-108",
+    "conf": "Lean",
+    "why": "71% of the spread money is on Carolina even with 78% of bettors on Green Bay to win. A field-goal-plus on a short week is worth taking."
+   },
+   "prop": {
+    "pick": "Josh Jacobs anytime TD",
+    "odds": "-135",
+    "conf": "Strong",
+    "why": "Carolina just gave up 258 rushing yards and 3 TDs. Jacobs is Green Bay's goal-line back."
+   },
+   "id": "nfl-2026-w8-CAR-GB"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 10:00 AM PT",
+   "away": "MIN",
+   "home": "DET",
+   "awayName": "Vikings",
+   "homeName": "Lions",
+   "fav": "DET",
+   "spread": 3,
+   "total": 46.5,
+   "mlAway": "+142",
+   "mlHome": "-170",
+   "winner": "DET",
+   "defense": {
+    "team": "DET",
+    "note": "Slight edge. Minnesota is 6-0 but hasn't been pushed to score."
+   },
+   "scheme": {
+    "player": "T.J. Hockenson",
+    "team": "MIN",
+    "pos": "TE",
+    "note": "Detroit leans on man coverage and allows the most fantasy points to tight ends."
+   },
+   "td": {
+    "player": "Jahmyr Gibbs",
+    "team": "DET",
+    "pos": "RB",
+    "pct": 71,
+    "odds": "71%"
+   },
+   "alt": "Amon-Ra St. Brown 47%",
+   "public": {
+    "mlAway": {
+     "bets": 20,
+     "money": 20
+    },
+    "mlHome": {
+     "bets": 80,
+     "money": 80
+    },
+    "atsAway": {
+     "bets": 13,
+     "money": 11
+    },
+    "atsHome": {
+     "bets": 87,
+     "money": 89
+    }
+   },
+   "bet": {
+    "market": "Spread",
+    "pick": "Lions -3",
+    "odds": "-120",
+    "conf": "Lean",
+    "why": "87% of bets and 89% of money agree on Detroit. Minnesota's 6-0 start came against soft schedules."
+   },
+   "prop": {
+    "pick": "Jahmyr Gibbs anytime TD",
+    "odds": "71%",
+    "conf": "Strong",
+    "why": "Highest touchdown probability on the board. Detroit is a 24.8-point implied team total."
+   },
+   "id": "nfl-2026-w8-MIN-DET"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 10:00 AM PT",
+   "away": "LV",
+   "home": "NYJ",
+   "awayName": "Raiders",
+   "homeName": "Jets",
+   "fav": "NYJ",
+   "spread": 1.5,
+   "total": 45.5,
+   "mlAway": "+102",
+   "mlHome": "-122",
+   "winner": "NYJ",
+   "defense": {
+    "team": "NYJ",
+    "note": "By a hair. Close to a coin flip."
+   },
+   "scheme": {
+    "player": "Ashton Jeanty",
+    "team": "LV",
+    "pos": "RB",
+    "note": "Leads all running backs in receiving yards."
+   },
+   "td": {
+    "player": "Ashton Jeanty",
+    "team": "LV",
+    "pos": "RB",
+    "pct": null,
+    "odds": "No line yet"
+   },
+   "alt": "Brock Bowers +115",
+   "public": {
+    "mlAway": {
+     "bets": 70,
+     "money": 51
+    },
+    "mlHome": {
+     "bets": 30,
+     "money": 49
+    },
+    "atsAway": {
+     "bets": 73,
+     "money": 71
+    },
+    "atsHome": {
+     "bets": 27,
+     "money": 29
+    }
+   },
+   "bet": {
+    "market": "Spread",
+    "pick": "Raiders +1.5",
+    "odds": "-110",
+    "conf": "Lean",
+    "why": "70% of bets and 71% of spread money are on Las Vegas in a game the books price as a coin flip."
+   },
+   "prop": {
+    "pick": "Brock Bowers anytime TD",
+    "odds": "+115",
+    "conf": "Lean",
+    "why": "Plus money on Las Vegas's top target in a game with a total that's climbed four points."
+   },
+   "id": "nfl-2026-w8-LV-NYJ"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 10:00 AM PT",
+   "away": "ARI",
+   "home": "DAL",
+   "awayName": "Cardinals",
+   "homeName": "Cowboys",
+   "fav": "DAL",
+   "spread": 7,
+   "total": 54.5,
+   "mlAway": "+280",
+   "mlHome": "-355",
+   "winner": "DAL",
+   "defense": {
+    "team": null,
+    "note": "Avoid both. Highest total on the slate."
+   },
+   "scheme": {
+    "player": "Javonte Williams",
+    "team": "DAL",
+    "pos": "RB",
+    "note": "Arizona is bottom-third against outside receivers, so Lamb and Pickens are close behind."
+   },
+   "td": {
+    "player": "Javonte Williams",
+    "team": "DAL",
+    "pos": "RB",
+    "pct": null,
+    "odds": "No line yet"
+   },
+   "alt": "CeeDee Lamb +110",
+   "public": {
+    "mlAway": {
+     "bets": 40,
+     "money": 76
+    },
+    "mlHome": {
+     "bets": 60,
+     "money": 24
+    },
+    "atsAway": {
+     "bets": 69,
+     "money": 70
+    },
+    "atsHome": {
+     "bets": 31,
+     "money": 30
+    }
+   },
+   "bet": {
+    "market": "Spread",
+    "pick": "Cardinals +7",
+    "odds": "-115",
+    "conf": "Medium",
+    "why": "76% of the moneyline money and 70% of spread money are on Arizona. Getting the full 7 in a shootout protects against a late backdoor."
+   },
+   "prop": {
+    "pick": "CeeDee Lamb anytime TD",
+    "odds": "+110",
+    "conf": "Medium",
+    "why": "Arizona is bottom-third against outside receivers, and Dallas has a 30-plus implied team total."
+   },
+   "id": "nfl-2026-w8-ARI-DAL"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 10:00 AM PT",
+   "away": "ATL",
+   "home": "TB",
+   "awayName": "Falcons",
+   "homeName": "Buccaneers",
+   "fav": "TB",
+   "spread": 2.5,
+   "total": 45.5,
+   "mlAway": "+114",
+   "mlHome": "-135",
+   "winner": "TB",
+   "defense": {
+    "team": "TB",
+    "note": "Forced four takeaways last week."
+   },
+   "scheme": {
+    "player": "Bucky Irving",
+    "team": "TB",
+    "pos": "RB",
+    "note": "Atlanta has allowed 14+ fantasy points to six runners."
+   },
+   "td": {
+    "player": "Bucky Irving",
+    "team": "TB",
+    "pos": "RB",
+    "pct": 56,
+    "odds": "-125"
+   },
+   "alt": "3 rushing TDs in his last 3 games",
+   "public": {
+    "mlAway": {
+     "bets": 46,
+     "money": 23
+    },
+    "mlHome": {
+     "bets": 54,
+     "money": 77
+    },
+    "atsAway": {
+     "bets": 61,
+     "money": 53
+    },
+    "atsHome": {
+     "bets": 39,
+     "money": 47
+    }
+   },
+   "bet": {
+    "market": "Moneyline",
+    "pick": "Buccaneers ML",
+    "odds": "-135",
+    "conf": "Lean",
+    "why": "77% of the moneyline money is on Tampa Bay, which forced four takeaways last week."
+   },
+   "prop": {
+    "pick": "Bucky Irving anytime TD",
+    "odds": "-125",
+    "conf": "Strong",
+    "why": "Three rushing TDs in his last three games and Atlanta has allowed 14+ fantasy points to six runners."
+   },
+   "id": "nfl-2026-w8-ATL-TB"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 10:00 AM PT",
+   "away": "BAL",
+   "home": "BUF",
+   "awayName": "Ravens",
+   "homeName": "Bills",
+   "fav": "BUF",
+   "spread": 3,
+   "total": 54.5,
+   "mlAway": "+145",
+   "mlHome": "-175",
+   "winner": "BUF",
+   "defense": {
+    "team": null,
+    "note": "Avoid both. Shootout expected."
+   },
+   "scheme": {
+    "player": "Derrick Henry",
+    "team": "BAL",
+    "pos": "RB",
+    "note": "Buffalo ranks 30th against the run."
+   },
+   "td": {
+    "player": "Derrick Henry",
+    "team": "BAL",
+    "pos": "RB",
+    "pct": 69,
+    "odds": "69%"
+   },
+   "alt": "James Cook 60%",
+   "qb": "Josh Allen 62% to score. Top QB rushing TD of the week.",
+   "flag": "Watch Lamar Jackson's status.",
+   "public": {
+    "mlAway": {
+     "bets": 17,
+     "money": 21
+    },
+    "mlHome": {
+     "bets": 83,
+     "money": 79
+    },
+    "atsAway": {
+     "bets": 60,
+     "money": 59
+    },
+    "atsHome": {
+     "bets": 40,
+     "money": 41
+    }
+   },
+   "bet": {
+    "market": "Moneyline",
+    "pick": "Bills ML",
+    "odds": "-175",
+    "conf": "Lean",
+    "why": "Buffalo is rested off a bye and 83% of bets are on the Bills. Pass if Lamar Jackson is ruled in and the line drops."
+   },
+   "prop": {
+    "pick": "Derrick Henry anytime TD",
+    "odds": "69%",
+    "conf": "Strong",
+    "why": "Buffalo ranks 30th against the run and this is the highest total of the week."
+   },
+   "id": "nfl-2026-w8-BAL-BUF"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 10:00 AM PT",
+   "away": "IND",
+   "home": "JAX",
+   "awayName": "Colts",
+   "homeName": "Jaguars",
+   "fav": "JAX",
+   "spread": 9.5,
+   "total": 46.5,
+   "mlAway": "+340",
+   "mlHome": "-440",
+   "winner": "JAX",
+   "defense": {
+    "team": "JAX",
+    "note": "Indianapolis is projected for about 18.5 points."
+   },
+   "scheme": {
+    "player": "Bhayshul Tuten",
+    "team": "JAX",
+    "pos": "RB",
+    "note": "Colts are the most man-heavy defense over the last three weeks and leak big games to backs."
+   },
+   "td": {
+    "player": "Bhayshul Tuten",
+    "team": "JAX",
+    "pos": "RB",
+    "pct": null,
+    "odds": "No line yet"
+   },
+   "alt": "Leads Jacksonville in red-zone carries",
+   "public": {
+    "mlAway": {
+     "bets": 28,
+     "money": 31
+    },
+    "mlHome": {
+     "bets": 72,
+     "money": 69
+    },
+    "atsAway": {
+     "bets": 25,
+     "money": 27
+    },
+    "atsHome": {
+     "bets": 75,
+     "money": 73
+    }
+   },
+   "bet": {
+    "market": "Spread",
+    "pick": "Jaguars -9.5",
+    "odds": "-108",
+    "conf": "Lean",
+    "why": "About three-quarters of bets and money are on Jacksonville off its bye. Indianapolis scored 10 last week."
+   },
+   "prop": {
+    "pick": "Bhayshul Tuten anytime TD",
+    "odds": "No line yet",
+    "conf": "Medium",
+    "why": "Jacksonville's lead red-zone back against a Colts defense that has given up three 23-point games to running backs."
+   },
+   "id": "nfl-2026-w8-IND-JAX"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 10:00 AM PT",
+   "away": "TEN",
+   "home": "CIN",
+   "awayName": "Titans",
+   "homeName": "Bengals",
+   "fav": "CIN",
+   "spread": 10,
+   "total": 46.5,
+   "mlAway": "+380",
+   "mlHome": "-500",
+   "winner": "CIN",
+   "defense": {
+    "team": "CIN",
+    "note": "Best defensive spot of the week. Tennessee's offense ranks last."
+   },
+   "scheme": {
+    "player": "Chase Brown",
+    "team": "CIN",
+    "pos": "RB",
+    "note": "Tennessee allows 4.9 yards per carry to backs since Week 5."
+   },
+   "td": {
+    "player": "Chase Brown",
+    "team": "CIN",
+    "pos": "RB",
+    "pct": null,
+    "odds": "No line yet"
+   },
+   "alt": "Ja'Marr Chase if Brown sits",
+   "flag": "Check Chase Brown's hamstring status.",
+   "public": {
+    "mlAway": {
+     "bets": 31,
+     "money": 34
+    },
+    "mlHome": {
+     "bets": 69,
+     "money": 66
+    },
+    "atsAway": {
+     "bets": 58,
+     "money": 78
+    },
+    "atsHome": {
+     "bets": 42,
+     "money": 22
+    }
+   },
+   "bet": {
+    "market": "Spread",
+    "pick": "Titans +10",
+    "odds": "-105",
+    "conf": "Lean",
+    "why": "78% of the spread money is on Tennessee. Double-digit dogs with money behind them are worth a look."
+   },
+   "prop": {
+    "pick": "Ja'Marr Chase anytime TD",
+    "odds": "No line yet",
+    "conf": "Medium",
+    "why": "Safer than Chase Brown while Brown's hamstring is uncertain. Chase is still looking for his first big game."
+   },
+   "id": "nfl-2026-w8-TEN-CIN"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 10:00 AM PT",
+   "away": "CLE",
+   "home": "PIT",
+   "awayName": "Browns",
+   "homeName": "Steelers",
+   "fav": "PIT",
+   "spread": 3.5,
+   "total": 39.5,
+   "mlAway": "+154",
+   "mlHome": "-185",
+   "winner": "PIT",
+   "defense": {
+    "team": "PIT",
+    "note": "Lowest total of the week. Both defenses are playable."
+   },
+   "scheme": {
+    "player": "DK Metcalf",
+    "team": "PIT",
+    "pos": "WR",
+    "note": "Cleveland plays the most man in the league, about 44% Cover-1."
+   },
+   "td": {
+    "player": "Jaylen Warren",
+    "team": "PIT",
+    "pos": "RB",
+    "pct": 56,
+    "odds": "56%"
+   },
+   "alt": "DK Metcalf 39%",
+   "public": {
+    "mlAway": {
+     "bets": 22,
+     "money": 25
+    },
+    "mlHome": {
+     "bets": 78,
+     "money": 75
+    },
+    "atsAway": {
+     "bets": 70,
+     "money": 73
+    },
+    "atsHome": {
+     "bets": 30,
+     "money": 27
+    }
+   },
+   "bet": {
+    "market": "Spread",
+    "pick": "Browns +3.5",
+    "odds": "-110",
+    "conf": "Medium",
+    "why": "73% of spread money is on Cleveland, which is 5-1 against the spread since Week 1. In a 39.5 total, 3.5 points matter."
+   },
+   "prop": {
+    "pick": "Jaylen Warren anytime TD",
+    "odds": "56%",
+    "conf": "Medium",
+    "why": "Pittsburgh's most likely scorer in a low-scoring game. DK Metcalf is the upside play against Cleveland's Cover-1."
+   },
+   "id": "nfl-2026-w8-CLE-PIT"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 1:05 PM PT",
+   "away": "LAC",
+   "home": "LAR",
+   "awayName": "Chargers",
+   "homeName": "Rams",
+   "fav": "LAR",
+   "spread": 6.5,
+   "total": 45.5,
+   "mlAway": "+240",
+   "mlHome": "-298",
+   "winner": "LAR",
+   "defense": {
+    "team": "LAR",
+    "note": "The Chargers are 0-6."
+   },
+   "scheme": {
+    "player": "Puka Nacua",
+    "team": "LAR",
+    "pos": "WR",
+    "note": "Consensus top-two receiver this week against a struggling Chargers team."
+   },
+   "td": {
+    "player": "Kyren Williams",
+    "team": "LAR",
+    "pos": "RB",
+    "pct": null,
+    "odds": "No line yet"
+   },
+   "alt": "Scored in 3 of his last 4",
+   "public": {
+    "mlAway": {
+     "bets": 7,
+     "money": 15
+    },
+    "mlHome": {
+     "bets": 93,
+     "money": 85
+    },
+    "atsAway": {
+     "bets": 70,
+     "money": 91
+    },
+    "atsHome": {
+     "bets": 30,
+     "money": 9
+    }
+   },
+   "bet": {
+    "market": "Spread",
+    "pick": "Chargers +6.5",
+    "odds": "-102",
+    "conf": "Medium",
+    "why": "The clearest split of the week: 93% of bets are on the Rams to win, but 91% of the spread money is on the Chargers."
+   },
+   "prop": {
+    "pick": "Kyren Williams anytime TD",
+    "odds": "No line yet",
+    "conf": "Medium",
+    "why": "Scored in 3 of his last 4 and is the Rams' goal-line back."
+   },
+   "id": "nfl-2026-w8-LAC-LAR"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 1:25 PM PT",
+   "away": "KC",
+   "home": "DEN",
+   "awayName": "Chiefs",
+   "homeName": "Broncos",
+   "fav": "KC",
+   "spread": 1.5,
+   "total": 40.5,
+   "mlAway": "-118",
+   "mlHome": "-102",
+   "winner": "KC",
+   "defense": {
+    "team": "DEN",
+    "note": "Lean Denver. Kansas City scored 3 at Seattle."
+   },
+   "scheme": {
+    "player": "Kenneth Walker III",
+    "team": "KC",
+    "pos": "RB",
+    "note": "On talent and volume. Denver's scheme doesn't favor him."
+   },
+   "td": {
+    "player": "Kenneth Walker III",
+    "team": "KC",
+    "pos": "RB",
+    "pct": null,
+    "odds": "No line yet"
+   },
+   "alt": "6 total TDs in his first 4 games",
+   "public": {
+    "mlAway": {
+     "bets": 36,
+     "money": 36
+    },
+    "mlHome": {
+     "bets": 64,
+     "money": 64
+    },
+    "atsAway": {
+     "bets": 66,
+     "money": 50
+    },
+    "atsHome": {
+     "bets": 34,
+     "money": 50
+    }
+   },
+   "bet": {
+    "market": "Total",
+    "pick": "Under 40.5",
+    "odds": "-108",
+    "conf": "Lean",
+    "why": "The total has dropped from 43.5. Both teams play heavy man coverage and Kansas City scored 3 points last week."
+   },
+   "prop": {
+    "pick": "Kenneth Walker III anytime TD",
+    "odds": "No line yet",
+    "conf": "Medium",
+    "why": "Six touchdowns in his first four games. Volume beats matchup here."
+   },
+   "id": "nfl-2026-w8-KC-DEN"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 1:25 PM PT",
+   "away": "NE",
+   "home": "MIA",
+   "awayName": "Patriots",
+   "homeName": "Dolphins",
+   "fav": "NE",
+   "spread": 7,
+   "total": 43.5,
+   "mlAway": "-310",
+   "mlHome": "+250",
+   "winner": "NE",
+   "defense": {
+    "team": "NE",
+    "note": "Miami is projected for about 18 points."
+   },
+   "scheme": {
+    "player": "Rhamondre Stevenson",
+    "team": "NE",
+    "pos": "RB",
+    "note": "Miami has allowed six backs to score 15+ fantasy points."
+   },
+   "td": {
+    "player": "Rhamondre Stevenson",
+    "team": "NE",
+    "pos": "RB",
+    "pct": null,
+    "odds": "No line yet"
+   },
+   "alt": "Was -110 last week",
+   "qb": "Drake Maye is a long-shot rushing TD.",
+   "public": {
+    "mlAway": {
+     "bets": 83,
+     "money": 64
+    },
+    "mlHome": {
+     "bets": 17,
+     "money": 36
+    },
+    "atsAway": {
+     "bets": 52,
+     "money": 68
+    },
+    "atsHome": {
+     "bets": 48,
+     "money": 32
+    }
+   },
+   "bet": {
+    "market": "Spread",
+    "pick": "Patriots -7",
+    "odds": "-105",
+    "conf": "Lean",
+    "why": "68% of the spread money is on New England, and Miami is projected for about 18 points."
+   },
+   "prop": {
+    "pick": "Rhamondre Stevenson anytime TD",
+    "odds": "No line yet",
+    "conf": "Medium",
+    "why": "Miami has allowed six running backs to score 15+ fantasy points."
+   },
+   "id": "nfl-2026-w8-NE-MIA"
+  },
+  {
+   "day": "Sun",
+   "kickoff": "Sun Nov 1 · 5:20 PM PT",
+   "label": "Sunday Night",
+   "away": "PHI",
+   "home": "WAS",
+   "awayName": "Eagles",
+   "homeName": "Commanders",
+   "fav": "WAS",
+   "spread": 5.5,
+   "total": 40.5,
+   "mlAway": "+180",
+   "mlHome": "-218",
+   "winner": "WAS",
+   "defense": {
+    "team": "WAS",
+    "note": "Philadelphia is without Jalen Hurts."
+   },
+   "scheme": {
+    "player": "Dallas Goedert",
+    "team": "PHI",
+    "pos": "TE",
+    "note": "Washington plays heavy Cover-2 and allows the 2nd-most points to tight ends."
+   },
+   "td": {
+    "player": "Saquon Barkley",
+    "team": "PHI",
+    "pos": "RB",
+    "pct": 51,
+    "odds": "51%"
+   },
+   "alt": "Rachaad White 51%",
+   "qb": "Jayden Daniels 33% to score.",
+   "public": {
+    "mlAway": {
+     "bets": 17,
+     "money": 5
+    },
+    "mlHome": {
+     "bets": 83,
+     "money": 95
+    },
+    "atsAway": {
+     "bets": 50,
+     "money": 65
+    },
+    "atsHome": {
+     "bets": 50,
+     "money": 35
+    }
+   },
+   "bet": {
+    "market": "Moneyline",
+    "pick": "Commanders ML",
+    "odds": "-218",
+    "conf": "Medium",
+    "why": "95% of the moneyline money is on Washington, and Philadelphia is without Jalen Hurts."
+   },
+   "prop": {
+    "pick": "Rachaad White anytime TD",
+    "odds": "51%",
+    "conf": "Medium",
+    "why": "Philadelphia just allowed 155 rushing yards to one back, and White is Washington's lead runner."
+   },
+   "id": "nfl-2026-w8-PHI-WAS"
+  },
+  {
+   "day": "Mon",
+   "kickoff": "Mon Nov 2 · 5:15 PM PT",
+   "label": "Monday Night",
+   "away": "CHI",
+   "home": "SEA",
+   "awayName": "Bears",
+   "homeName": "Seahawks",
+   "fav": "SEA",
+   "spread": 3,
+   "total": 46.5,
+   "mlAway": "+140",
+   "mlHome": "-166",
+   "winner": "SEA",
+   "defense": {
+    "team": "SEA",
+    "note": "Held Kansas City to 3 points last week."
+   },
+   "scheme": {
+    "player": "Jaxon Smith-Njigba",
+    "team": "SEA",
+    "pos": "WR",
+    "note": "Consensus WR1 this week."
+   },
+   "td": {
+    "player": "Jaxon Smith-Njigba",
+    "team": "SEA",
+    "pos": "WR",
+    "pct": 52,
+    "odds": "-110"
+   },
+   "alt": null,
+   "public": null,
+   "bet": {
+    "market": "Moneyline",
+    "pick": "Seahawks ML",
+    "odds": "-166",
+    "conf": "Lean",
+    "why": "Seattle's defense just held Kansas City to 3. No public splits posted yet."
+   },
+   "prop": {
+    "pick": "Jaxon Smith-Njigba anytime TD",
+    "odds": "-110",
+    "conf": "Strong",
+    "why": "Consensus WR1 this week and Seattle's top red-zone target."
+   },
+   "id": "nfl-2026-w8-CHI-SEA"
+  }
+ ],
+ "publicAsOf": "Public splits: Cleatz snapshot, Oct 27, 8:09 PM PT",
+ "sport": "nfl"
+}

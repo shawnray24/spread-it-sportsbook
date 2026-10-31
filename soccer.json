@@ -1,0 +1,975 @@
+{
+ "sport": "soccer",
+ "updated": "2026-10-31",
+ "window": "Oct 30 – Nov 2, 2026",
+ "note": "Win probabilities from Sportradar. Goal and shot numbers are league-only, 2026-27 season. Odds are shown where a sportsbook price was published.",
+ "games": [
+  {
+   "id": "soc-laliga-2026-10-30-VIL-ESP",
+   "league": "laliga",
+   "date": "2026-10-30",
+   "kickoff": "Fri Oct 30 · 1:00 PM PT",
+   "home": "VIL",
+   "away": "ESP",
+   "homeName": "Villarreal",
+   "awayName": "Espanyol",
+   "noPicks": true
+  },
+  {
+   "id": "soc-bundesliga-2026-10-30-SVE-M05",
+   "league": "bundesliga",
+   "date": "2026-10-30",
+   "kickoff": "Fri Oct 30 · 12:30 PM PT",
+   "home": "SVE",
+   "away": "M05",
+   "homeName": "SV Elversberg",
+   "awayName": "Mainz 05",
+   "noPicks": true
+  },
+  {
+   "id": "soc-epl-2026-10-31-CFC-MUN",
+   "league": "epl",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 5:30 AM PT",
+   "home": "CFC",
+   "away": "MUN",
+   "homeName": "Chelsea",
+   "awayName": "Manchester United",
+   "prob": {
+    "home": 47,
+    "draw": 25.4,
+    "away": 27.6
+   },
+   "result": {
+    "pick": "CFC",
+    "conf": "Lean",
+    "why": "Chelsea are the 47% favorite, but they've kept one clean sheet in their last 24 league games and United have drawn three of their last four."
+   },
+   "goal": {
+    "player": "Bryan Mbeumo",
+    "team": "MUN",
+    "odds": "+250",
+    "conf": "Medium",
+    "why": "United's top league scorer (4 goals) with 11 shots on target, joint third-most in the league. Chelsea rarely keep clean sheets."
+   },
+   "sot": {
+    "player": "Pedro Neto",
+    "team": "CFC",
+    "line": 1,
+    "odds": null,
+    "conf": "Medium",
+    "why": "10 of his 14 shots this season have been on target across 8 games. With João Pedro injured, Neto is one of Chelsea's main shooters."
+   }
+  },
+  {
+   "id": "soc-epl-2026-10-31-BOU-LEE",
+   "league": "epl",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 8:00 AM PT",
+   "home": "BOU",
+   "away": "LEE",
+   "homeName": "Bournemouth",
+   "awayName": "Leeds United",
+   "prob": {
+    "home": 44.6,
+    "draw": 28,
+    "away": 27.4
+   },
+   "result": {
+    "pick": "BOU",
+    "conf": "Lean",
+    "why": "Home side and a 44.6% favorite. Bournemouth just won 3-0 at Manchester United."
+   },
+   "goal": {
+    "player": "Marcus Tavernier",
+    "team": "BOU",
+    "odds": null,
+    "conf": "Medium",
+    "why": "Bournemouth's top scorer with 5 league goals and 11 shots on target in 8 games."
+   },
+   "sot": {
+    "player": "Rayan",
+    "team": "BOU",
+    "line": 1,
+    "odds": null,
+    "conf": "Medium",
+    "why": "10 shots on target from 26 attempts in 8 games, among the most in the league."
+   }
+  },
+  {
+   "id": "soc-epl-2026-10-31-BRE-NFO",
+   "league": "epl",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 8:00 AM PT",
+   "home": "BRE",
+   "away": "NFO",
+   "homeName": "Brentford",
+   "awayName": "Nottingham Forest",
+   "prob": {
+    "home": 44.8,
+    "draw": 26.2,
+    "away": 29
+   },
+   "result": {
+    "pick": "BRE",
+    "conf": "Lean",
+    "why": "44.8% favorite at home. Forest have scored only away from home this season."
+   },
+   "goal": {
+    "player": "Kevin Schade",
+    "team": "BRE",
+    "odds": null,
+    "conf": "Lean",
+    "why": "Brentford's top league scorer with 3 goals and 7 shots on target in 8 games."
+   },
+   "sot": {
+    "player": "Kevin Schade",
+    "team": "BRE",
+    "line": 1,
+    "odds": null,
+    "conf": "Lean",
+    "why": "7 shots on target in 8 games, about one per match, from 18 attempts."
+   }
+  },
+  {
+   "id": "soc-epl-2026-10-31-COV-SUN",
+   "league": "epl",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 8:00 AM PT",
+   "home": "COV",
+   "away": "SUN",
+   "homeName": "Coventry City",
+   "awayName": "Sunderland",
+   "prob": {
+    "home": 30.5,
+    "draw": 28.8,
+    "away": 40.7
+   },
+   "result": {
+    "pick": "SUN",
+    "conf": "Lean",
+    "why": "Sunderland are the 40.7% favorite on the road against a Coventry side that has struggled to score."
+   },
+   "goal": {
+    "player": "Brian Brobbey",
+    "team": "SUN",
+    "odds": null,
+    "conf": "Medium",
+    "why": "3 league goals in 6 games and 7 of his 13 shots on target."
+   },
+   "sot": {
+    "player": "Brian Brobbey",
+    "team": "SUN",
+    "line": 1,
+    "odds": null,
+    "conf": "Medium",
+    "why": "Puts more than half his shots on target: 7 of 13 so far, more than one per game."
+   }
+  },
+  {
+   "id": "soc-epl-2026-10-31-HUL-IPS",
+   "league": "epl",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 8:00 AM PT",
+   "home": "HUL",
+   "away": "IPS",
+   "homeName": "Hull City",
+   "awayName": "Ipswich Town",
+   "prob": {
+    "home": 32.9,
+    "draw": 28,
+    "away": 39.1
+   },
+   "result": {
+    "pick": "IPS",
+    "conf": "Lean",
+    "why": "Ipswich are the slight 39.1% favorite. Hull have scored in six of their eight games."
+   },
+   "goal": {
+    "player": "Mohamed Belloumi",
+    "team": "HUL",
+    "odds": null,
+    "conf": "Lean",
+    "why": "Hull's top league scorer with 3 goals and 2 assists."
+   },
+   "sot": {
+    "player": "Julio Enciso",
+    "team": "IPS",
+    "line": 1,
+    "odds": null,
+    "conf": "Medium",
+    "why": "23 shots and 7 on target in 8 games, Ipswich's highest shot volume."
+   }
+  },
+  {
+   "id": "soc-epl-2026-10-31-MCI-BRI",
+   "league": "epl",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 8:00 AM PT",
+   "home": "MCI",
+   "away": "BRI",
+   "homeName": "Manchester City",
+   "awayName": "Brighton",
+   "prob": {
+    "home": 57.2,
+    "draw": 21.7,
+    "away": 21.1
+   },
+   "result": {
+    "pick": "MCI",
+    "conf": "Medium",
+    "why": "57% favorite. City average more than four league goals per home game."
+   },
+   "goal": {
+    "player": "Erling Haaland",
+    "team": "MCI",
+    "odds": "-152",
+    "conf": "Strong",
+    "why": "Leads the league with 9 goals and has scored in each of his last seven appearances. Highest-probability scorer on the board."
+   },
+   "sot": {
+    "player": "Erling Haaland",
+    "team": "MCI",
+    "line": 2,
+    "odds": null,
+    "conf": "Medium",
+    "why": "15 shots on target in 8 games (1.9 per game), the most in the Premier League."
+   }
+  },
+  {
+   "id": "soc-epl-2026-10-31-TOT-CRY",
+   "league": "epl",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 10:30 AM PT",
+   "home": "TOT",
+   "away": "CRY",
+   "homeName": "Tottenham Hotspur",
+   "awayName": "Crystal Palace",
+   "prob": {
+    "home": 59.1,
+    "draw": 22.2,
+    "away": 18.7
+   },
+   "result": {
+    "pick": "TOT",
+    "conf": "Medium",
+    "why": "59% favorite at home. Palace striker Strand Larsen is a fitness doubt with an ankle problem."
+   },
+   "goal": {
+    "player": "Dominic Solanke",
+    "team": "TOT",
+    "odds": null,
+    "conf": "Lean",
+    "why": "Spurs' central striker in the predicted lineup. No Spurs player has more than one league goal yet, so this is a role-based pick."
+   },
+   "sot": {
+    "player": "Mohammed Kudus",
+    "team": "TOT",
+    "line": 1,
+    "odds": "-138",
+    "conf": "Medium",
+    "why": "Spurs' main creator (2 assists) and a tipped 1+ shots-on-target play at 8/11."
+   }
+  },
+  {
+   "id": "soc-epl-2026-10-31-AVL-FUL",
+   "league": "epl",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 1:00 PM PT",
+   "home": "AVL",
+   "away": "FUL",
+   "homeName": "Aston Villa",
+   "awayName": "Fulham",
+   "prob": {
+    "home": 47,
+    "draw": 26.5,
+    "away": 26.5
+   },
+   "result": {
+    "pick": "AVL",
+    "conf": "Lean",
+    "why": "47% favorite at home after beating Manchester City last week."
+   },
+   "goal": {
+    "player": "Nicolas Jackson",
+    "team": "AVL",
+    "odds": null,
+    "conf": "Medium",
+    "why": "Villa's top league scorer with 4 goals in 7 games and 7 shots on target."
+   },
+   "sot": {
+    "player": "Josh King",
+    "team": "FUL",
+    "line": 1,
+    "odds": null,
+    "conf": "Medium",
+    "why": "10 shots on target in 8 games, joint fifth-most in the league."
+   }
+  },
+  {
+   "id": "soc-epl-2026-11-01-LFC-ARS",
+   "league": "epl",
+   "date": "2026-11-01",
+   "kickoff": "Sun Nov 1 · 8:30 AM PT",
+   "home": "LFC",
+   "away": "ARS",
+   "homeName": "Liverpool",
+   "awayName": "Arsenal",
+   "prob": {
+    "home": 33.4,
+    "draw": 27.7,
+    "away": 38.9
+   },
+   "result": {
+    "pick": "ARS",
+    "conf": "Lean",
+    "why": "Arsenal are the slight 38.9% favorite and have the better defense, but Bukayo Saka is out with a thigh injury."
+   },
+   "goal": {
+    "player": "Alexander Isak",
+    "team": "LFC",
+    "odds": null,
+    "conf": "Medium",
+    "why": "6 league goals in 7 games, second only to Haaland."
+   },
+   "sot": {
+    "player": "Kai Havertz",
+    "team": "ARS",
+    "line": 1,
+    "odds": null,
+    "conf": "Lean",
+    "why": "7 shots on target in 8 games. With Saka out, more of Arsenal's shots should run through him."
+   }
+  },
+  {
+   "id": "soc-epl-2026-11-02-NEW-EVE",
+   "league": "epl",
+   "date": "2026-11-02",
+   "kickoff": "Mon Nov 2 · 12:00 PM PT",
+   "home": "NEW",
+   "away": "EVE",
+   "homeName": "Newcastle United",
+   "awayName": "Everton",
+   "prob": {
+    "home": 40.7,
+    "draw": 26.7,
+    "away": 32.6
+   },
+   "result": {
+    "pick": "NEW",
+    "conf": "Lean",
+    "why": "40.7% home favorite in a close game."
+   },
+   "goal": {
+    "player": "Thierno Barry",
+    "team": "EVE",
+    "odds": null,
+    "conf": "Lean",
+    "why": "3 league goals and 27 shots, the second-highest shot volume in the league."
+   },
+   "sot": {
+    "player": "Thierno Barry",
+    "team": "EVE",
+    "line": 1,
+    "odds": null,
+    "conf": "Medium",
+    "why": "12 shots on target in 8 games (1.5 per game), second only to Haaland."
+   }
+  },
+  {
+   "id": "soc-laliga-2026-10-31-LEV-ATM",
+   "league": "laliga",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 6:00 AM PT",
+   "home": "LEV",
+   "away": "ATM",
+   "homeName": "Levante",
+   "awayName": "Atlético Madrid",
+   "prob": {
+    "home": 16.8,
+    "draw": 19.8,
+    "away": 63.4
+   },
+   "result": {
+    "pick": "ATM",
+    "conf": "Medium",
+    "why": "63% favorite on the road."
+   },
+   "goal": {
+    "player": "Álex Baena",
+    "team": "ATM",
+    "odds": null,
+    "conf": "Medium",
+    "why": "Atlético's top league scorer with 5 goals, and in the predicted starting lineup."
+   },
+   "sot": {
+    "player": "Álex Baena",
+    "team": "ATM",
+    "line": 1,
+    "odds": null,
+    "conf": "Lean",
+    "why": "7 shots on target from 15 attempts in his first 7 games."
+   }
+  },
+  {
+   "id": "soc-laliga-2026-10-31-RVC-RCC",
+   "league": "laliga",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 8:15 AM PT",
+   "home": "RVC",
+   "away": "RCC",
+   "homeName": "Rayo Vallecano",
+   "awayName": "Celta Vigo",
+   "prob": {
+    "home": 38.5,
+    "draw": 29.7,
+    "away": 31.8
+   },
+   "result": {
+    "pick": "RVC",
+    "conf": "Lean",
+    "why": "38.5% home favorite in a tight game."
+   },
+   "goal": {
+    "player": "Sergio Camello",
+    "team": "RVC",
+    "odds": null,
+    "conf": "Medium",
+    "why": "7 league goals, joint-fifth in La Liga, and Rayo's main finisher."
+   },
+   "sot": {
+    "player": "Sergio Camello",
+    "team": "RVC",
+    "line": 1,
+    "odds": null,
+    "conf": "Medium",
+    "why": "11 shots on target from 19 attempts in his first 7 games."
+   }
+  },
+  {
+   "id": "soc-laliga-2026-10-31-RBB-MCF",
+   "league": "laliga",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 10:30 AM PT",
+   "home": "RBB",
+   "away": "MCF",
+   "homeName": "Real Betis",
+   "awayName": "Málaga",
+   "prob": {
+    "home": 73.9,
+    "draw": 15.6,
+    "away": 10.5
+   },
+   "result": {
+    "pick": "RBB",
+    "conf": "Strong",
+    "why": "74% home favorite."
+   },
+   "goal": {
+    "player": "Abde Ezzalzouli",
+    "team": "RBB",
+    "odds": null,
+    "conf": "Lean",
+    "why": "Betis' top league scorer with 3 goals in 7 games."
+   },
+   "sot": {
+    "player": "Antony",
+    "team": "RBB",
+    "line": 1,
+    "odds": null,
+    "conf": "Medium",
+    "why": "32 shots and 13 on target in his first 7 games, almost two on target per game."
+   }
+  },
+  {
+   "id": "soc-laliga-2026-10-31-BAR-ALA",
+   "league": "laliga",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 1:00 PM PT",
+   "home": "BAR",
+   "away": "ALA",
+   "homeName": "Barcelona",
+   "awayName": "Alavés",
+   "prob": {
+    "home": 87.9,
+    "draw": 8,
+    "away": 4.1
+   },
+   "result": {
+    "pick": "BAR",
+    "conf": "Strong",
+    "why": "88% home favorite."
+   },
+   "goal": {
+    "player": "Raphinha",
+    "team": "BAR",
+    "odds": null,
+    "conf": "Strong",
+    "why": "Leads La Liga with 13 goals in 9 games and is in the predicted starting lineup."
+   },
+   "sot": {
+    "player": "Lamine Yamal",
+    "team": "BAR",
+    "line": 1,
+    "odds": null,
+    "conf": "Strong",
+    "why": "14 shots on target in his first 7 games, two per game. He also has 8 goals."
+   }
+  },
+  {
+   "id": "soc-laliga-2026-11-01-GET-SEV",
+   "league": "laliga",
+   "date": "2026-11-01",
+   "kickoff": "Sun Nov 1 · 5:00 AM PT",
+   "home": "GET",
+   "away": "SEV",
+   "homeName": "Getafe",
+   "awayName": "Sevilla",
+   "prob": {
+    "home": 30.1,
+    "draw": 31.7,
+    "away": 38.2
+   },
+   "result": {
+    "pick": "SEV",
+    "conf": "Lean",
+    "why": "Sevilla are the slight 38.2% favorite in a likely low-scoring game."
+   },
+   "goal": {
+    "player": "Isaac Romero",
+    "team": "SEV",
+    "odds": null,
+    "conf": "Lean",
+    "why": "Sevilla's top league scorer with 3 goals in 8 games."
+   },
+   "sot": {
+    "player": "Ramón Terrats",
+    "team": "GET",
+    "line": 1,
+    "odds": null,
+    "conf": "Lean",
+    "why": "Getafe's highest-volume shooter: 17 shots and 6 on target in his first 6 games."
+   }
+  },
+  {
+   "id": "soc-laliga-2026-11-01-RAC-RMA",
+   "league": "laliga",
+   "date": "2026-11-01",
+   "kickoff": "Sun Nov 1 · 7:15 AM PT",
+   "home": "RAC",
+   "away": "RMA",
+   "homeName": "Racing Santander",
+   "awayName": "Real Madrid",
+   "prob": {
+    "home": 9.5,
+    "draw": 12.1,
+    "away": 78.4
+   },
+   "result": {
+    "pick": "RMA",
+    "conf": "Strong",
+    "why": "78% favorite on the road."
+   },
+   "goal": {
+    "player": "Kylian Mbappé",
+    "team": "RMA",
+    "odds": null,
+    "conf": "Strong",
+    "why": "11 league goals in 10 games, second in La Liga."
+   },
+   "sot": {
+    "player": "Kylian Mbappé",
+    "team": "RMA",
+    "line": 2,
+    "odds": null,
+    "conf": "Strong",
+    "why": "22 shots on target in his first 7 games, more than three per game, the most in La Liga."
+   }
+  },
+  {
+   "id": "soc-laliga-2026-11-01-ELC-VCF",
+   "league": "laliga",
+   "date": "2026-11-01",
+   "kickoff": "Sun Nov 1 · 9:30 AM PT",
+   "home": "ELC",
+   "away": "VCF",
+   "homeName": "Elche",
+   "awayName": "Valencia",
+   "prob": {
+    "home": 40.4,
+    "draw": 28.3,
+    "away": 31.3
+   },
+   "result": {
+    "pick": "ELC",
+    "conf": "Lean",
+    "why": "40.4% home favorite. Elche won 3-0 at Rayo last week."
+   },
+   "goal": {
+    "player": "Fer Niño",
+    "team": "ELC",
+    "odds": null,
+    "conf": "Medium",
+    "why": "6 league goals, Elche's top scorer."
+   },
+   "sot": {
+    "player": "Fer Niño",
+    "team": "ELC",
+    "line": 1,
+    "odds": null,
+    "conf": "Lean",
+    "why": "Elche's main striker. Shot data for him isn't published yet, so this follows his scoring form."
+   }
+  },
+  {
+   "id": "soc-laliga-2026-11-01-ATH-RSO",
+   "league": "laliga",
+   "date": "2026-11-01",
+   "kickoff": "Sun Nov 1 · 12:00 PM PT",
+   "home": "ATH",
+   "away": "RSO",
+   "homeName": "Athletic Club",
+   "awayName": "Real Sociedad",
+   "prob": {
+    "home": 44.1,
+    "draw": 26,
+    "away": 29.9
+   },
+   "result": {
+    "pick": "ATH",
+    "conf": "Lean",
+    "why": "44.1% home favorite in the Basque derby. Athletic beat Getafe 4-0 last week."
+   },
+   "goal": {
+    "player": "Álex Berenguer",
+    "team": "ATH",
+    "odds": null,
+    "conf": "Lean",
+    "why": "Athletic's top league scorer with 3 goals."
+   },
+   "sot": {
+    "player": "Oihan Sancet",
+    "team": "ATH",
+    "line": 1,
+    "odds": null,
+    "conf": "Lean",
+    "why": "17 shots in his first 6 games, Athletic's highest volume."
+   }
+  },
+  {
+   "id": "soc-laliga-2026-11-02-DEP-OSA",
+   "league": "laliga",
+   "date": "2026-11-02",
+   "kickoff": "Mon Nov 2 · 12:00 PM PT",
+   "home": "DEP",
+   "away": "OSA",
+   "homeName": "Deportivo La Coruña",
+   "awayName": "Osasuna",
+   "prob": {
+    "home": 43.7,
+    "draw": 29.2,
+    "away": 27.1
+   },
+   "result": {
+    "pick": "DEP",
+    "conf": "Lean",
+    "why": "43.7% home favorite."
+   },
+   "goal": {
+    "player": "Pierre-Emerick Aubameyang",
+    "team": "DEP",
+    "odds": null,
+    "conf": "Medium",
+    "why": "5 league goals in 7 games, with 10 shots on target in his first 7."
+   },
+   "sot": {
+    "player": "Ante Budimir",
+    "team": "OSA",
+    "line": 1,
+    "odds": null,
+    "conf": "Medium",
+    "why": "7 league goals and 11 shots on target from 18 attempts in his first 7 games."
+   }
+  },
+  {
+   "id": "soc-bundesliga-2026-10-31-LEV-VFB",
+   "league": "bundesliga",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 7:30 AM PT",
+   "home": "LEV",
+   "away": "VFB",
+   "homeName": "Bayer Leverkusen",
+   "awayName": "VfB Stuttgart",
+   "prob": {
+    "home": 56.6,
+    "draw": 20.8,
+    "away": 22.6
+   },
+   "result": {
+    "pick": "LEV",
+    "conf": "Medium",
+    "why": "57% home favorite."
+   },
+   "goal": {
+    "player": "Patrik Schick",
+    "team": "LEV",
+    "odds": null,
+    "conf": "Medium",
+    "why": "6 league goals, joint second in the Bundesliga, with 10 shots on target."
+   },
+   "sot": {
+    "player": "Ermedin Demirović",
+    "team": "VFB",
+    "line": 1,
+    "odds": null,
+    "conf": "Lean",
+    "why": "10 shots on target in 7 games, Stuttgart's highest."
+   }
+  },
+  {
+   "id": "soc-bundesliga-2026-10-31-FCA-SCF",
+   "league": "bundesliga",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 7:30 AM PT",
+   "home": "FCA",
+   "away": "SCF",
+   "homeName": "FC Augsburg",
+   "awayName": "SC Freiburg",
+   "prob": {
+    "home": 32.9,
+    "draw": 25.1,
+    "away": 42
+   },
+   "result": {
+    "pick": "SCF",
+    "conf": "Lean",
+    "why": "Freiburg are the 42% favorite on the road."
+   },
+   "goal": {
+    "player": "Michael Gregoritsch",
+    "team": "FCA",
+    "odds": null,
+    "conf": "Medium",
+    "why": "4 league goals, with 12 of his 18 shots on target."
+   },
+   "sot": {
+    "player": "Igor Matanović",
+    "team": "SCF",
+    "line": 1,
+    "odds": null,
+    "conf": "Medium",
+    "why": "12 shots on target in 7 games, joint-third in the Bundesliga."
+   }
+  },
+  {
+   "id": "soc-bundesliga-2026-10-31-BMG-PAD",
+   "league": "bundesliga",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 7:30 AM PT",
+   "home": "BMG",
+   "away": "PAD",
+   "homeName": "Borussia Mönchengladbach",
+   "awayName": "SC Paderborn",
+   "prob": {
+    "home": 42.8,
+    "draw": 25.3,
+    "away": 31.9
+   },
+   "result": {
+    "pick": "BMG",
+    "conf": "Lean",
+    "why": "42.8% home favorite after their first league win, 3-2 at Stuttgart."
+   },
+   "goal": {
+    "player": "Shuto Machino",
+    "team": "BMG",
+    "odds": null,
+    "conf": "Lean",
+    "why": "Expected to lead Gladbach's attack. Gladbach home games have averaged 4.75 total goals. This is a role-based pick."
+   },
+   "sot": {
+    "player": "Shuto Machino",
+    "team": "BMG",
+    "line": 1,
+    "odds": null,
+    "conf": "Lean",
+    "why": "Gladbach's central striker. Shot data for him isn't published, so this is a role-based pick."
+   }
+  },
+  {
+   "id": "soc-bundesliga-2026-10-31-SVW-TSG",
+   "league": "bundesliga",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 7:30 AM PT",
+   "home": "SVW",
+   "away": "TSG",
+   "homeName": "Werder Bremen",
+   "awayName": "Hoffenheim",
+   "prob": {
+    "home": 37.2,
+    "draw": 24.5,
+    "away": 38.3
+   },
+   "result": {
+    "pick": "TSG",
+    "conf": "Lean",
+    "why": "Close to a coin flip. Hoffenheim are a fraction ahead at 38.3% after beating Leverkusen 3-0."
+   },
+   "goal": {
+    "player": "Niclas Füllkrug",
+    "team": "SVW",
+    "odds": null,
+    "conf": "Strong",
+    "why": "Leads the Bundesliga with 8 goals in 7 games."
+   },
+   "sot": {
+    "player": "Niclas Füllkrug",
+    "team": "SVW",
+    "line": 1,
+    "odds": null,
+    "conf": "Strong",
+    "why": "17 of his 23 shots on target, nearly 2.5 per game."
+   }
+  },
+  {
+   "id": "soc-bundesliga-2026-10-31-SCH-RBL",
+   "league": "bundesliga",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 7:30 AM PT",
+   "home": "SCH",
+   "away": "RBL",
+   "homeName": "Schalke 04",
+   "awayName": "RB Leipzig",
+   "prob": {
+    "home": 23.6,
+    "draw": 23.3,
+    "away": 53.1
+   },
+   "result": {
+    "pick": "RBL",
+    "conf": "Medium",
+    "why": "53% favorite on the road. Schalke have scored the fewest goals in the league."
+   },
+   "goal": {
+    "player": "Christopher Nkunku",
+    "team": "RBL",
+    "odds": null,
+    "conf": "Medium",
+    "why": "4 league goals in 6 games."
+   },
+   "sot": {
+    "player": "Antonio Nusa",
+    "team": "RBL",
+    "line": 1,
+    "odds": null,
+    "conf": "Lean",
+    "why": "6 shots on target and 3 goals in 7 games."
+   }
+  },
+  {
+   "id": "soc-bundesliga-2026-10-31-BMU-BVB",
+   "league": "bundesliga",
+   "date": "2026-10-31",
+   "kickoff": "Sat Oct 31 · 10:30 AM PT",
+   "home": "BMU",
+   "away": "BVB",
+   "homeName": "Bayern Munich",
+   "awayName": "Borussia Dortmund",
+   "prob": {
+    "home": 72.2,
+    "draw": 15.2,
+    "away": 12.6
+   },
+   "result": {
+    "pick": "BMU",
+    "conf": "Medium",
+    "why": "72% home favorite. Bayern have won every home game and lead the league in goals."
+   },
+   "goal": {
+    "player": "Harry Kane",
+    "team": "BMU",
+    "odds": null,
+    "conf": "Medium",
+    "why": "4 goals and 3 assists in his last three games, and the bookmakers' favorite to score first (3.65)."
+   },
+   "sot": {
+    "player": "Michael Olise",
+    "team": "BMU",
+    "line": 2,
+    "odds": null,
+    "conf": "Medium",
+    "why": "18 shots on target in 7 games, 2.6 per game, the most in the Bundesliga. He leads Bayern with 6 goals."
+   }
+  },
+  {
+   "id": "soc-bundesliga-2026-11-01-UNI-KOE",
+   "league": "bundesliga",
+   "date": "2026-11-01",
+   "kickoff": "Sun Nov 1 · 6:30 AM PT",
+   "home": "UNI",
+   "away": "KOE",
+   "homeName": "Union Berlin",
+   "awayName": "1. FC Köln",
+   "prob": {
+    "home": 35.8,
+    "draw": 26.3,
+    "away": 37.9
+   },
+   "result": {
+    "pick": "KOE",
+    "conf": "Lean",
+    "why": "Köln are a slight 37.9% favorite on the road."
+   },
+   "goal": {
+    "player": "Saïd El Mala",
+    "team": "KOE",
+    "odds": null,
+    "conf": "Lean",
+    "why": "26 shots this season, third-most in the Bundesliga."
+   },
+   "sot": {
+    "player": "Saïd El Mala",
+    "team": "KOE",
+    "line": 1,
+    "odds": null,
+    "conf": "Lean",
+    "why": "7 shots on target in 6 games."
+   }
+  },
+  {
+   "id": "soc-bundesliga-2026-11-01-SGE-HSV",
+   "league": "bundesliga",
+   "date": "2026-11-01",
+   "kickoff": "Sun Nov 1 · 8:30 AM PT",
+   "home": "SGE",
+   "away": "HSV",
+   "homeName": "Eintracht Frankfurt",
+   "awayName": "Hamburger SV",
+   "prob": {
+    "home": 61.2,
+    "draw": 20.2,
+    "away": 18.6
+   },
+   "result": {
+    "pick": "SGE",
+    "conf": "Medium",
+    "why": "61% home favorite. Hamburg have a -10 goal difference."
+   },
+   "goal": {
+    "player": "Younes Ebnoutalib",
+    "team": "SGE",
+    "odds": null,
+    "conf": "Medium",
+    "why": "5 league goals, Frankfurt's top scorer."
+   },
+   "sot": {
+    "player": "Younes Ebnoutalib",
+    "team": "SGE",
+    "line": 1,
+    "odds": null,
+    "conf": "Medium",
+    "why": "9 shots on target in 7 games."
+   }
+  }
+ ]
+}

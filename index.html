@@ -1,11 +1,10 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Spread It Sportsbook</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Layout: scoreboard header band, three summary panels, then a grid of game cards read like betting slips */
+/* Layout: scoreboard header, sticky sport tabs, summary panels, then game cards that read like graded betting slips */
 :root {
   --bg: #f1f4f1;
   --surface: #ffffff;
@@ -17,6 +16,10 @@
   --gold: #a8730c;
   --gold-soft: #f6ecd6;
   --warn: #9a3b16;
+  --miss: #b3261e;
+  --miss-soft: #fbe7e5;
+  --hit: #1d7a45;
+  --hit-soft: #e1f3e8;
   --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
   --body: "Barlow", "Segoe UI", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
@@ -25,24 +28,40 @@
   :root:not([data-theme="light"]) {
     --bg: #0d1411; --surface: #151f1a; --ink: #e5ece7; --muted: #93a39a; --line: #26332c;
     --turf: #63c08a; --turf-soft: #1b2f24; --gold: #e2b44a; --gold-soft: #2e2716; --warn: #f08a5d;
+    --miss: #f2857c; --miss-soft: #3a1d1b; --hit: #6fd197; --hit-soft: #183424;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0d1411; --surface: #151f1a; --ink: #e5ece7; --muted: #93a39a; --line: #26332c;
   --turf: #63c08a; --turf-soft: #1b2f24; --gold: #e2b44a; --gold-soft: #2e2716; --warn: #f08a5d;
+  --miss: #f2857c; --miss-soft: #3a1d1b; --hit: #6fd197; --hit-soft: #183424;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
 .wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-header { padding-block: 28px 18px; border-bottom: 3px solid var(--turf); }
+header { padding-block: 28px 16px; }
 .eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--turf); }
-h1 { font: 800 clamp(40px, 8vw, 68px)/.95 var(--display); letter-spacing: .01em; text-transform: uppercase; margin: 8px 0 10px; text-wrap: balance; }
-.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: 14px; }
+h1 { font: 800 clamp(40px, 8vw, 68px)/.95 var(--display); letter-spacing: .01em; text-transform: uppercase; margin: 8px 0 12px; text-wrap: balance; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: 14px; align-items: center; }
 .meta b { color: var(--ink); font-weight: 600; }
+.rec { display: inline-flex; gap: 6px; align-items: baseline; font: 500 13px var(--mono); font-variant-numeric: tabular-nums; }
+.rec .w { color: var(--hit); } .rec .l { color: var(--miss); }
+nav.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 3px solid var(--turf); }
+.tabrow { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+.tabrow::-webkit-scrollbar { display: none; }
+.tab { font: 800 18px/1 var(--display); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); text-decoration: none; padding: 12px 14px 11px; border-radius: 6px 6px 0 0; white-space: nowrap; }
+.tab[aria-current="page"] { background: var(--turf); color: var(--bg); }
+.tab:hover:not([aria-current="page"]) { color: var(--ink); background: var(--turf-soft); }
+.tab:focus-visible, .chip:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.tab .cnt { font: 500 11px var(--mono); margin-left: 4px; opacity: .75; }
 main { display: grid; gap: 28px; padding-block: 24px 40px; }
+.view { display: grid; gap: 28px; }
 h2 { font: 800 22px/1 var(--display); text-transform: uppercase; letter-spacing: .03em; margin: 0 0 12px; }
+.lede { color: var(--muted); max-width: 70ch; margin: -4px 0 0; font-size: 14px; }
 .panels { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; min-width: 0; }
 .panel ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
@@ -53,22 +72,25 @@ h2 { font: 800 22px/1 var(--display); text-transform: uppercase; letter-spacing:
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
 .chip { font: 600 14px var(--body); padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--turf); border-color: var(--turf); color: var(--bg); }
-.chip:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); align-items: start; }
+.subline { font: 600 12px var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--turf); }
 @media (max-width: 420px) { .grid { grid-template-columns: 1fr; } }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
 .card-top { padding: 14px 16px 12px; border-bottom: 1px dashed var(--line); }
-.kick { display: flex; justify-content: space-between; gap: 8px; font: 500 12px var(--mono); color: var(--muted); }
+.kick { display: flex; justify-content: space-between; gap: 8px; font: 500 12px var(--mono); color: var(--muted); flex-wrap: wrap; }
 .kick .label { color: var(--gold); text-transform: uppercase; letter-spacing: .06em; }
-.teams { display: flex; align-items: baseline; gap: 10px; margin-top: 6px; }
+.teams { display: flex; align-items: baseline; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
 .team { font: 800 34px/1 var(--display); letter-spacing: .02em; }
 .at { font: 600 18px var(--display); color: var(--muted); }
 .names { color: var(--muted); font-size: 13px; }
+.score { margin-left: auto; display: inline-flex; align-items: baseline; gap: 8px; font: 800 30px/1 var(--display); font-variant-numeric: tabular-nums; }
+.score .st { font: 500 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; background: var(--line); color: var(--ink); align-self: center; }
+.score .st.live { background: var(--miss); color: var(--bg); }
 .line { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--turf-soft); }
 .line div { padding: 8px 12px; min-width: 0; }
 .line div + div { border-left: 1px solid var(--line); }
-.line small { display: block; font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-.rows { padding: 6px 16px 14px; display: grid; }
+.line small, .sm { display: block; font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.rows { padding: 6px 16px 14px; display: grid; margin: 0; }
 .row { display: grid; grid-template-columns: 92px 1fr; gap: 10px; padding-block: 9px; border-bottom: 1px solid var(--line); }
 .row:last-child { border-bottom: 0; }
 .row dt { font: 500 11px/1.7 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
@@ -78,12 +100,10 @@ h2 { font: 800 22px/1 var(--display); text-transform: uppercase; letter-spacing:
 .pct { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
 .bar { flex: 1; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; max-width: 160px; }
 .bar i { display: block; height: 100%; background: var(--turf); }
-.td dd .pick { color: var(--turf); }
-.badge { display: inline-block; font: 500 11px var(--mono); padding: 2px 7px; border-radius: 3px; background: var(--gold-soft); color: var(--gold); margin-left: 6px; vertical-align: 1px; }
 .flag { margin: 0 16px 14px; padding: 8px 10px; border-radius: 4px; background: var(--gold-soft); color: var(--ink); font-size: 13px; }
 .flag b { color: var(--warn); }
 footer { border-top: 1px solid var(--line); padding-block: 18px 32px; color: var(--muted); font-size: 13px; }
-footer p { margin: 0 0 6px; max-width: 70ch; }
+footer p { margin: 0 0 6px; max-width: 75ch; }
 .state { padding: 40px 0; color: var(--muted); }
 .split { display: grid; gap: 6px; }
 .split-row { display: grid; grid-template-columns: 52px 1fr; gap: 8px; align-items: center; font-size: 13px; }
@@ -92,191 +112,360 @@ footer p { margin: 0 0 6px; max-width: 70ch; }
 .sbar span { padding: 0 6px; white-space: nowrap; min-width: 0; overflow: hidden; }
 .sbar .a { background: var(--line); color: var(--ink); }
 .sbar .h { background: var(--turf); color: var(--bg); text-align: right; }
+.sbar .dr { background: var(--gold-soft); color: var(--ink); text-align: center; }
 .sbar .dogside { background: var(--gold); color: var(--bg); }
 .picks { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+.picks.one { grid-template-columns: 1fr; }
 @media (max-width: 420px) { .picks { grid-template-columns: 1fr; } }
-.pk { background: var(--surface); padding: 12px 14px; min-width: 0; display: grid; gap: 4px; align-content: start; }
+.pk { background: var(--surface); padding: 12px 14px; min-width: 0; display: grid; gap: 5px; align-content: start; }
+.pk-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .pk small { font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); }
 .pk .what { font: 800 19px/1.1 var(--display); letter-spacing: .02em; text-transform: uppercase; }
 .pk .why { color: var(--muted); font-size: 13px; }
-.conf { font: 500 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 1px 6px; border-radius: 3px; border: 1px solid currentColor; justify-self: start; }
+.pk.hit { box-shadow: inset 3px 0 0 var(--hit); }
+.pk.miss { box-shadow: inset 3px 0 0 var(--miss); }
+.who { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.who > div { min-width: 0; }
+.av { flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font: 800 15px/1 var(--display); letter-spacing: .03em; border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--line); }
+.av.sm2 { width: 30px; height: 30px; font-size: 12px; }
+.metaline { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; }
+.conf { font: 500 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 1px 6px; border-radius: 3px; border: 1px solid currentColor; }
 .conf.Strong { color: var(--turf); }
 .conf.Medium { color: var(--gold); }
 .conf.Lean { color: var(--muted); }
+.st-chip { font: 600 11px var(--mono); letter-spacing: .04em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+.st-chip.hit { background: var(--hit-soft); color: var(--hit); }
+.st-chip.miss { background: var(--miss-soft); color: var(--miss); }
+.st-chip.push, .st-chip.void { background: var(--line); color: var(--muted); }
+.st-chip.pending { color: var(--muted); border: 1px dashed var(--line); }
+.st-note { font-size: 12.5px; color: var(--muted); }
 .alert { display: inline-block; font: 600 12px var(--body); color: var(--gold); margin-top: 2px; }
+.lg { font: 500 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--turf); }
+.probs { padding: 10px 16px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.offseason { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 24px; display: grid; gap: 10px; max-width: 760px; }
+.offseason h3 { font: 800 30px/1 var(--display); text-transform: uppercase; margin: 0; }
+.offseason p { margin: 0; color: var(--muted); max-width: 65ch; }
+.howlist { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.how { border: 1px dashed var(--line); border-radius: 6px; padding: 12px 14px; }
+.how b { display: block; font: 800 17px/1.1 var(--display); text-transform: uppercase; margin-bottom: 4px; }
+.how span { color: var(--muted); font-size: 13.5px; }
+.tally { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+.tl { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; }
+.tl .big { font: 800 34px/1 var(--display); font-variant-numeric: tabular-nums; }
+.tl .big .w { color: var(--hit); } .tl .big .l { color: var(--miss); }
+.reslist { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.resrow { display: grid; grid-template-columns: 104px 1fr auto; gap: 12px; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.resrow:last-child { border-bottom: 0; }
+.resrow .lbl { min-width: 0; }
+.resrow .lbl span { display: block; color: var(--muted); font-size: 12.5px; }
+@media (prefers-reduced-motion: no-preference) { .st-chip.live-pulse { animation: pulse 1.6s ease-in-out infinite; } @keyframes pulse { 50% { opacity: .55; } } }
 </style>
 
 <header>
   <div class="wrap">
-    <div class="eyebrow" id="season">NFL · Loading</div>
-    <h1 id="headline">Spread It Sportsbook</h1>
-    <div class="meta" id="meta"></div>
+    <div class="eyebrow">Picks · NFL · Soccer · NBA · MLB</div>
+    <h1>Spread It Sportsbook</h1>
+    <div class="meta" id="meta"><span>Loading the board…</span></div>
   </div>
 </header>
 
+<nav class="tabs" aria-label="Sports">
+  <div class="wrap tabrow" id="tabs">
+    <a class="tab" href="#nfl" data-view="nfl">NFL</a>
+    <a class="tab" href="#soccer" data-view="soccer">Soccer</a>
+    <a class="tab" href="#nba" data-view="nba">NBA</a>
+    <a class="tab" href="#mlb" data-view="mlb">MLB</a>
+    <a class="tab" href="#results" data-view="results">Results</a>
+  </div>
+</nav>
+
 <main class="wrap">
-  <section aria-labelledby="sum-h">
-    <h2 id="sum-h">This week at a glance</h2>
-    <div class="panels" id="panels"></div>
-  </section>
-  <section aria-labelledby="games-h">
-    <h2 id="games-h">Every game</h2>
-    <div class="chips" role="group" aria-label="Filter by day" id="chips"></div>
-    <div class="grid" id="grid"><p class="state">Loading this week's board…</p></div>
-  </section>
+  <section class="view" id="v-nfl" hidden></section>
+  <section class="view" id="v-soccer" hidden></section>
+  <section class="view" id="v-nba" hidden></section>
+  <section class="view" id="v-mlb" hidden></section>
+  <section class="view" id="v-results" hidden></section>
 </main>
 
 <footer class="wrap">
-  <p>Implied team totals come from the spread and over/under. Touchdown percentages are the sportsbook odds converted to a probability, so they include the book's margin. "No line yet" means books hadn't posted that prop when the board was built.</p>
-  <p>Smart bets weigh the line, line movement, where the money is going, matchups and injuries. Strong, Medium and Lean show how much the evidence agrees. Lines move with injury news. For entertainment; please bet responsibly.</p>
+  <p>Results update about every hour while games are being played. A pick shows Hit or Miss once its game is final. A player prop is marked Void if the player doesn't play.</p>
+  <p>Player badges show initials in team colors. Touchdown and goal percentages are sportsbook odds converted to a probability, so they include the book's margin. Strong, Medium and Lean show how much the evidence agrees.</p>
+  <p>For entertainment and information only. Lines move with injury news, so check before you bet, and please bet responsibly.</p>
 </footer>
 
 <script>
 (function () {
-  var state = { day: "All" };
-  try { state.day = localStorage.getItem("edge-day") || "All"; } catch (e) {}
-  var data;
+  var VIEWS = ["nfl", "soccer", "nba", "mlb", "results"];
+  var D = { nfl: null, soccer: null, nba: null, mlb: null, results: { games: {}, picks: {} } };
+  var ui = { nflDay: "All", league: "all" };
+  try { ui.nflDay = localStorage.getItem("si-nflday") || "All"; ui.league = localStorage.getItem("si-league") || "all"; } catch (e) {}
+
+  var LEAGUES = { epl: "Premier League", laliga: "La Liga", bundesliga: "Bundesliga" };
+  var COLORS = {
+    nfl: { ARI:"#97233F",ATL:"#A71930",BAL:"#241773",BUF:"#00338D",CAR:"#0085CA",CHI:"#0B162A",CIN:"#FB4F14",CLE:"#311D00",DAL:"#003594",DEN:"#FB4F14",DET:"#0076B6",GB:"#203731",HOU:"#03202F",IND:"#002C5F",JAX:"#006778",KC:"#E31837",LV:"#1A1A1A",LAC:"#0080C6",LAR:"#003594",MIA:"#008E97",MIN:"#4F2683",NE:"#002244",NO:"#9A7F4A",NYG:"#0B2265",NYJ:"#125740",PHI:"#004C54",PIT:"#FFB612",SF:"#AA0000",SEA:"#002244",TB:"#D50A0A",TEN:"#4B92DB",WAS:"#5A1414" },
+    epl: { ARS:"#EF0107",AVL:"#670E36",BOU:"#B50E12",BRE:"#E30613",BRI:"#0057B8",CFC:"#034694",COV:"#3DA9DE",CRY:"#1B458F",EVE:"#003399",FUL:"#1A1A1A",HUL:"#F5A12D",IPS:"#0044A9",LEE:"#1D428A",LFC:"#C8102E",MCI:"#6CABDD",MUN:"#DA291C",NEW:"#241F20",NFO:"#DD0000",SUN:"#EB172B",TOT:"#132257" },
+    laliga: { ALA:"#0761AF",ATH:"#EE2523",ATM:"#CB3524",BAR:"#A50044",DEP:"#1B5BA8",ELC:"#05642C",ESP:"#007FC8",GET:"#005999",LEV:"#0A3A82",MCF:"#0066B3",OSA:"#D91A21",RAC:"#00A650",RBB:"#00954C",RCC:"#8AC3EE",RMA:"#00529F",RSO:"#0067B1",RVC:"#E53027",SEV:"#D4021D",VCF:"#F18E00",VIL:"#FFE667" },
+    bundesliga: { BMG:"#1E1E1E",BMU:"#DC052D",BVB:"#FDE100",FCA:"#BA3733",HSV:"#0A3F86",KOE:"#ED1C24",LEV:"#E32221",M05:"#C3141E",PAD:"#005CA9",RBL:"#DD0741",SCF:"#C8102E",SCH:"#004D9D",SGE:"#E1000F",SVE:"#222222",SVW:"#1D9053",TSG:"#1C63B7",UNI:"#EB1923",VFB:"#E32219" },
+    nba: { ATL:"#E03A3E",BOS:"#007A33",BKN:"#1A1A1A",CHA:"#1D1160",CHI:"#CE1141",CLE:"#860038",DAL:"#00538C",DEN:"#0E2240",DET:"#C8102E",GSW:"#1D428A",HOU:"#CE1141",IND:"#002D62",LAC:"#C8102E",LAL:"#552583",MEM:"#5D76A9",MIA:"#98002E",MIL:"#00471B",MIN:"#0C2340",NOP:"#0C2340",NYK:"#006BB6",OKC:"#007AC1",ORL:"#0077C0",PHI:"#006BB6",PHX:"#1D1160",POR:"#E03A3E",SAC:"#5A2D81",SAS:"#1F1F1F",TOR:"#CE1141",UTA:"#3E2680",WAS:"#002B5C" },
+    mlb: { ARI:"#A71930",ATL:"#CE1141",ATH:"#003831",BAL:"#DF4601",BOS:"#BD3039",CHC:"#0E3386",CWS:"#27251F",CIN:"#C6011F",CLE:"#00385D",COL:"#333366",DET:"#0C2340",HOU:"#EB6E1F",KC:"#004687",LAA:"#BA0021",LAD:"#005A9C",MIA:"#00A3E0",MIL:"#12284B",MIN:"#002B5C",NYM:"#002D72",NYY:"#0C2340",PHI:"#E81828",PIT:"#FDB827",SD:"#2F241D",SF:"#FD5A1E",SEA:"#0C2C56",STL:"#C41E3A",TB:"#092C5C",TEX:"#003278",TOR:"#134A8E",WSH:"#AB0003" }
+  };
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function implied(g) {
-    var favT = (g.total + g.spread) / 2, dogT = g.total - favT;
-    var t = {}; t[g.fav] = favT; t[g.fav === g.home ? g.away : g.home] = dogT; return t;
-  }
   function fmt(n) { return (Math.round(n * 2) / 2).toFixed(1).replace(".0", ""); }
-  function fmtDate(s) { var d = new Date(s + "T12:00:00"); return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); }
+  function fmtDate(s) { if (!s) return ""; var d = new Date(s.length > 10 ? s : s + "T12:00:00"); return d.toLocaleDateString("en-US", { month: "short", day: "numeric" }); }
+  function fmtStamp(s) { if (!s) return ""; var d = new Date(s); if (isNaN(d)) return fmtDate(s); return d.toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); }
+  function teamColor(group, code) { var m = COLORS[group] || {}; return m[code] || "#5b6b62"; }
+  function textOn(hex) {
+    var h = hex.replace("#", ""); var r = parseInt(h.substr(0, 2), 16), g = parseInt(h.substr(2, 2), 16), b = parseInt(h.substr(4, 2), 16);
+    var L = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255; return L > 0.6 ? "#111111" : "#ffffff";
+  }
+  function initials(name) {
+    var parts = String(name).replace(/[^\p{L}\s'-]/gu, "").trim().split(/\s+/);
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
+  function avatar(name, group, team, small) {
+    var c = teamColor(group, team);
+    return '<span class="av' + (small ? " sm2" : "") + '" style="background:' + c + ";color:" + textOn(c) + '" aria-hidden="true">' + esc(initials(name)) + "</span>";
+  }
+  function res(id) { return (D.results.picks || {})[id]; }
+  function gameRes(id) { return (D.results.games || {})[id]; }
+  function chip(id) {
+    var r = res(id);
+    if (!r) return '<span class="st-chip pending">Pending</span>';
+    var t = { hit: "✓ Hit", miss: "✗ Miss", push: "Push", void: "Void" }[r.r] || r.r;
+    return '<span class="st-chip ' + esc(r.r) + '">' + t + "</span>";
+  }
+  function chipNote(id) { var r = res(id); return r && r.note ? '<span class="st-note">' + esc(r.note) + "</span>" : ""; }
+  function pkClass(id) { var r = res(id); return r && (r.r === "hit" || r.r === "miss") ? " " + r.r : ""; }
+  function scoreHtml(id, awayFirst) {
+    var g = gameRes(id); if (!g) return "";
+    var live = g.status === "live";
+    var a = g.away, h = g.home;
+    return '<span class="score">' + (awayFirst ? a + "–" + h : h + "–" + a) +
+      '<span class="st' + (live ? " live live-pulse" : "") + '">' + esc(g.detail || (live ? "Live" : "Final")) + "</span></span>";
+  }
+  function confTag(c) { return c ? '<span class="conf ' + esc(c) + '">' + esc(c) + "</span>" : ""; }
 
-  function renderHeader() {
-    document.getElementById("season").textContent = "NFL " + data.season + " · Week " + data.week + " Board";
-    document.getElementById("headline").textContent = "Spread It Sportsbook";
+  /* ---------- record ---------- */
+  function tally(filterSport) {
+    var picks = D.results.picks || {}, seen = {}, t = { hit: 0, miss: 0, push: 0 };
+    Object.keys(picks).forEach(function (id) {
+      var p = picks[id]; if (filterSport && p.sport !== filterSport) return;
+      var game = id.replace(/-(win|bet|prop|td|result|goal|sot|p\d+|k|hr)$/, "");
+      var key = game + "|" + p.label; if (seen[key]) return; seen[key] = 1;
+      if (t[p.r] != null) t[p.r]++;
+    });
+    return t;
+  }
+  function recHtml(t) { return '<span class="rec"><span class="w">' + t.hit + "W</span>–<span class=\"l\">" + t.miss + "L</span>" + (t.push ? "–" + t.push + "P" : "") + "</span>"; }
+
+  function renderMeta() {
+    var all = tally();
+    var stamp = D.results.updated ? fmtStamp(D.results.updated) : "";
     document.getElementById("meta").innerHTML =
-      "<span>Updated <b>" + esc(fmtDate(data.updated)) + "</b></span>" +
-      "<span>" + esc(data.oddsAsOf) + "</span>" +
-      (data.publicAsOf ? "<span>" + esc(data.publicAsOf) + "</span>" : "") +
-      (data.byes && data.byes.length ? "<span>Byes: <b>" + esc(data.byes.join(", ")) + "</b></span>" : "");
+      "<span>Pick record " + recHtml(all) + "</span>" +
+      (stamp ? "<span>Results checked <b>" + esc(stamp) + "</b></span>" : "");
   }
 
-  function renderPanels() {
-    var tds = data.games.filter(function (g) { return g.td && g.td.pct != null; })
-      .map(function (g) { return g.td; }).sort(function (a, b) { return b.pct - a.pct; }).slice(0, 5);
-    var defs = data.games.filter(function (g) { return g.defense && g.defense.team; }).map(function (g) {
-      var t = implied(g), opp = g.defense.team === g.home ? g.away : g.home;
-      return { team: g.defense.team, opp: opp, pts: t[opp] };
-    }).sort(function (a, b) { return a.pts - b.pts; }).slice(0, 5);
-
-    var html = "";
-    var rank = { Strong: 0, Medium: 1, Lean: 2 };
-    var top = data.games.filter(function (g) { return g.bet && g.bet.conf !== "Lean"; })
-      .sort(function (a, b) { return rank[a.bet.conf] - rank[b.bet.conf]; });
-    var topProps = data.games.filter(function (g) { return g.prop && g.prop.conf === "Strong"; });
-    html += '<div class="panel"><h2>Best bets of the week</h2><ol>' + top.map(function (g) {
-      return "<li><span>" + esc(g.bet.pick) + '<span class="tag">' + esc(g.away) + " at " + esc(g.home) + '</span></span><span class="num">' + esc(g.bet.odds) + "</span></li>";
-    }).join("") + topProps.map(function (g) {
-      return "<li><span>" + esc(g.prop.pick) + '<span class="tag">prop</span></span><span class="num">' + esc(g.prop.odds) + "</span></li>";
-    }).join("") + "</ol></div>";
-    html += '<div class="panel"><h2>Most likely TD scorers</h2><ol>' + tds.map(function (t) {
-      return "<li><span>" + esc(t.player) + '<span class="tag">' + esc(t.team) + " " + esc(t.pos) + '</span></span><span class="num">' + t.pct + "%</span></li>";
-    }).join("") + "</ol></div>";
-    html += '<div class="panel"><h2>QB rushing TD</h2><ol>' + data.qbRush.map(function (q) {
-      return "<li><span>" + esc(q.name) + '<span class="tag">' + esc(q.team) + '</span></span><span class="num">' + esc(q.odds) + '</span><span class="sub">' + esc(q.note) + "</span></li>";
-    }).join("") + "</ol></div>";
-    html += '<div class="panel"><h2>Best defensive spots</h2><ol>' + defs.map(function (d) {
-      return "<li><span>" + esc(d.team) + '<span class="tag">vs ' + esc(d.opp) + '</span></span><span class="num">opp ' + fmt(d.pts) + " pts</span></li>";
-    }).join("") + "</ol></div>";
-    var dogs = data.games.filter(function (g) { return g.public; }).map(function (g) {
-      var dog = g.fav === g.home ? g.away : g.home, side = dog === g.home ? "mlHome" : "mlAway";
-      var p = g.public[side];
-      return { dog: dog, fav: g.fav, bets: p.bets, money: p.money };
-    }).filter(function (x) { return x.bets > 50 || x.money > 50; })
-      .sort(function (a, b) { return Math.max(b.bets, b.money) - Math.max(a.bets, a.money); });
-    html += '<div class="panel"><h2>Public backing the underdog</h2>' + (dogs.length ? "<ol>" + dogs.map(function (x) {
-      return "<li><span>" + esc(x.dog) + '<span class="tag">over ' + esc(x.fav) + '</span></span><span class="num">' + x.bets + "% bets</span>" +
-        '<span class="sub">' + x.money + "% of the money on " + esc(x.dog) + " to win outright</span></li>";
-    }).join("") + "</ol>" : '<p class="note">The public is on the favorite in every game so far.</p>') + "</div>";
-    document.getElementById("panels").innerHTML = html;
-  }
-
-  function renderChips() {
-    var days = ["All"]; data.games.forEach(function (g) { if (days.indexOf(g.day) < 0) days.push(g.day); });
-    if (days.indexOf(state.day) < 0) state.day = "All";
-    var c = document.getElementById("chips");
-    c.innerHTML = days.map(function (d) {
-      return '<button class="chip" type="button" id="chip-' + d + '" aria-pressed="' + (d === state.day) + '" data-day="' + d + '">' + (d === "All" ? "All games" : d) + "</button>";
-    }).join("");
-  }
-
+  /* ---------- NFL ---------- */
+  function implied(g) { var favT = (g.total + g.spread) / 2, dogT = g.total - favT; var t = {}; t[g.fav] = favT; t[g.fav === g.home ? g.away : g.home] = dogT; return t; }
   function sbar(g, a, hm) {
     var dog = g.fav === g.home ? "a" : "h";
     return '<div class="sbar"><span class="a' + (dog === "a" && a > 50 ? " dogside" : "") + '" style="flex:' + Math.max(a, 1) + '">' + esc(g.away) + " " + a + '%</span>' +
       '<span class="h' + (dog === "h" && hm > 50 ? " dogside" : "") + '" style="flex:' + Math.max(hm, 1) + '">' + hm + "% " + esc(g.home) + "</span></div>";
   }
   function publicHtml(g) {
-    var p = g.public, dog = g.fav === g.home ? g.away : g.home;
-    var dp = dog === g.home ? p.mlHome : p.mlAway;
-    var h = '<div class="split">' +
-      '<div class="split-row"><span>Bets</span>' + sbar(g, p.mlAway.bets, p.mlHome.bets) + "</div>" +
-      '<div class="split-row"><span>Money</span>' + sbar(g, p.mlAway.money, p.mlHome.money) + "</div></div>";
+    var p = g.public, dog = g.fav === g.home ? g.away : g.home, dp = dog === g.home ? p.mlHome : p.mlAway;
+    var h = '<div class="split"><div class="split-row"><span>Bets</span>' + sbar(g, p.mlAway.bets, p.mlHome.bets) + '</div><div class="split-row"><span>Money</span>' + sbar(g, p.mlAway.money, p.mlHome.money) + "</div></div>";
     if (dp.bets > 50 || dp.money > 50) h += '<span class="alert">Public is backing the underdog ' + esc(dog) + " to win</span>";
     var dogAts = dog === g.home ? p.atsHome : p.atsAway;
-    h += '<div class="note">Spread: ' + dogAts.bets + "% of bets, " + dogAts.money + "% of money on " + esc(dog) + " +" + g.spread + "</div>";
-    return h;
+    return h + '<div class="note">Spread: ' + dogAts.bets + "% of bets, " + dogAts.money + "% of money on " + esc(dog) + " +" + g.spread + "</div>";
   }
-  function pk(label, sub, what, odds, conf, why) {
-    return '<div class="pk"><small>' + label + (sub ? " · " + esc(sub) : "") + '</small><span class="what">' + esc(what) + '</span>' +
-      '<span class="num">' + esc(odds) + '</span><span class="conf ' + esc(conf) + '">' + esc(conf) + '</span><span class="why">' + esc(why) + "</span></div>";
+  function nflPk(id, label, sub, what, odds, conf, why) {
+    return '<div class="pk' + pkClass(id) + '"><div class="pk-head"><small>' + label + (sub ? " · " + esc(sub) : "") + "</small>" + chip(id) + "</div>" +
+      '<span class="what">' + esc(what) + '</span><div class="metaline"><span class="num">' + esc(odds) + "</span>" + confTag(conf) + chipNote(id) + '</div><span class="why">' + esc(why) + "</span></div>";
   }
-  function picksHtml(g) {
-    if (!g.bet && !g.prop) return "";
-    return '<div class="picks">' +
-      (g.bet ? pk("Smart bet", g.bet.market, g.bet.pick, g.bet.odds, g.bet.conf, g.bet.why) : "") +
-      (g.prop ? pk("Smart prop", "", g.prop.pick, g.prop.odds, g.prop.conf, g.prop.why) : "") + "</div>";
-  }
-  function card(g) {
-    var t = implied(g);
-    var td = g.td || {};
-    var pctHtml = td.pct != null
-      ? '<div class="pct"><span class="bar"><i style="width:' + td.pct + '%"></i></span><span class="num">' + esc(td.odds) + (td.odds.indexOf("%") < 0 ? " · " + td.pct + "%" : "") + "</span></div>"
+  function nflCard(g) {
+    var t = implied(g), td = g.td || {}, id = g.id;
+    var pctHtml = td.pct != null ? '<div class="pct"><span class="bar"><i style="width:' + td.pct + '%"></i></span><span class="num">' + esc(td.odds) + (String(td.odds).indexOf("%") < 0 ? " · " + td.pct + "%" : "") + "</span></div>"
       : '<div class="pct"><span class="num note">' + esc(td.odds || "No line yet") + "</span></div>";
     var rows = [
-      ["Win", '<span class="pick">' + esc(g.winner) + '</span> <span class="note">' + (g.winner === g.fav ? "favored by " + g.spread : "underdog pick") + "</span>"],
+      ["Win", '<div class="pk-head"><span><span class="pick">' + esc(g.winner) + '</span> <span class="note">' + (g.winner === g.fav ? "favored by " + g.spread : "underdog pick") + "</span></span>" + chip(id + "-win") + "</div>" + chipNote(id + "-win")],
+      ["Public", g.public ? publicHtml(g) : '<span class="note">Splits not posted yet</span>'],
       ["Defense", (g.defense.team ? '<span class="pick">' + esc(g.defense.team) + "</span> " : '<span class="pick">Avoid both</span> ') + '<div class="note">' + esc(g.defense.note) + "</div>"],
-      ["Scheme edge", '<span class="pick">' + esc(g.scheme.player) + '</span><span class="tag">' + esc(g.scheme.team) + " " + esc(g.scheme.pos) + '</span><div class="note">' + esc(g.scheme.note) + "</div>"],
-      ["TD scorer", '<span class="pick">' + esc(td.player) + '</span><span class="tag">' + esc(td.team) + " " + esc(td.pos) + "</span>" + pctHtml + (g.alt ? '<div class="note">Next: ' + esc(g.alt) + "</div>" : ""), "td"]
+      ["Scheme edge", '<div class="who">' + avatar(g.scheme.player, "nfl", g.scheme.team, true) + '<div><span class="pick">' + esc(g.scheme.player) + '</span><span class="tag">' + esc(g.scheme.team) + " " + esc(g.scheme.pos) + '</span><div class="note">' + esc(g.scheme.note) + "</div></div></div>"],
+      ["TD scorer", '<div class="pk-head"><div class="who">' + avatar(td.player, "nfl", td.team, true) + '<div><span class="pick">' + esc(td.player) + '</span><span class="tag">' + esc(td.team) + " " + esc(td.pos) + "</span></div></div>" + chip(id + "-td") + "</div>" + pctHtml + chipNote(id + "-td") + (g.alt ? '<div class="note">Next: ' + esc(g.alt) + "</div>" : "")]
     ];
-    if (g.public) rows.splice(1, 0, ["Public", publicHtml(g), "pub"]);
-    else rows.splice(1, 0, ["Public", '<span class="note">Splits not posted yet</span>']);
     if (g.qb) rows.push(["QB rush", '<span class="note">' + esc(g.qb) + "</span>"]);
-    return '<article class="card"><div class="card-top"><div class="kick"><span>' + esc(g.kickoff) + "</span>" +
-      (g.label ? '<span class="label">' + esc(g.label) + "</span>" : "") +
-      '</div><div class="teams"><span class="team">' + esc(g.away) + '</span><span class="at">at</span><span class="team">' + esc(g.home) + "</span></div>" +
+    var picks = (g.bet || g.prop) ? '<div class="picks">' +
+      (g.bet ? nflPk(id + "-bet", "Smart bet", g.bet.market, g.bet.pick, g.bet.odds, g.bet.conf, g.bet.why) : "") +
+      (g.prop ? nflPk(id + "-prop", "Smart prop", "", g.prop.pick, g.prop.odds, g.prop.conf, g.prop.why) : "") + "</div>" : "";
+    return '<article class="card"><div class="card-top"><div class="kick"><span>' + esc(g.kickoff) + "</span>" + (g.label ? '<span class="label">' + esc(g.label) + "</span>" : "") +
+      '</div><div class="teams"><span class="team">' + esc(g.away) + '</span><span class="at">at</span><span class="team">' + esc(g.home) + "</span>" + scoreHtml(id, true) + "</div>" +
       '<div class="names">' + esc(g.awayName) + " at " + esc(g.homeName) + "</div></div>" +
-      '<div class="line"><div><small>Spread</small><span class="num">' + esc(g.fav) + " −" + g.spread + "</span></div>" +
-      "<div><small>Total</small><span class=\"num\">" + g.total + "</span></div>" +
-      "<div><small>Implied</small><span class=\"num\">" + esc(g.away) + " " + fmt(t[g.away]) + " · " + esc(g.home) + " " + fmt(t[g.home]) + "</span></div></div>" +
-      picksHtml(g) +
-      '<dl class="rows">' + rows.map(function (r) { return '<div class="row' + (r[2] ? " " + r[2] : "") + '"><dt>' + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("") + "</dl>" +
+      '<div class="line"><div><small>Spread</small><span class="num">' + esc(g.fav) + " −" + g.spread + '</span></div><div><small>Total</small><span class="num">' + g.total + '</span></div><div><small>Implied</small><span class="num">' + esc(g.away) + " " + fmt(t[g.away]) + " · " + esc(g.home) + " " + fmt(t[g.home]) + "</span></div></div>" +
+      picks + '<dl class="rows">' + rows.map(function (r) { return '<div class="row"><dt>' + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("") + "</dl>" +
       (g.flag ? '<div class="flag"><b>Watch:</b> ' + esc(g.flag) + "</div>" : "") + "</article>";
   }
-
-  function renderGrid() {
-    var list = data.games.filter(function (g) { return state.day === "All" || g.day === state.day; });
-    document.getElementById("grid").innerHTML = list.map(card).join("");
+  function renderNFL() {
+    var d = D.nfl, el = document.getElementById("v-nfl");
+    if (!d) { el.innerHTML = '<p class="state">NFL picks couldn\'t load. Refresh the page to try again.</p>'; return; }
+    var rank = { Strong: 0, Medium: 1, Lean: 2 };
+    var top = d.games.filter(function (g) { return g.bet && g.bet.conf !== "Lean"; }).sort(function (a, b) { return rank[a.bet.conf] - rank[b.bet.conf]; });
+    var tds = d.games.filter(function (g) { return g.td && g.td.pct != null; }).map(function (g) { return { t: g.td, id: g.id + "-td" }; }).sort(function (a, b) { return b.t.pct - a.t.pct; }).slice(0, 5);
+    var defs = d.games.filter(function (g) { return g.defense && g.defense.team; }).map(function (g) { var t = implied(g), opp = g.defense.team === g.home ? g.away : g.home; return { team: g.defense.team, opp: opp, pts: t[opp] }; }).sort(function (a, b) { return a.pts - b.pts; }).slice(0, 5);
+    var dogs = d.games.filter(function (g) { return g.public; }).map(function (g) { var dog = g.fav === g.home ? g.away : g.home, p = g.public[dog === g.home ? "mlHome" : "mlAway"]; return { dog: dog, fav: g.fav, bets: p.bets, money: p.money }; }).filter(function (x) { return x.bets > 50 || x.money > 50; }).sort(function (a, b) { return Math.max(b.bets, b.money) - Math.max(a.bets, a.money); });
+    var days = ["All"]; d.games.forEach(function (g) { if (days.indexOf(g.day) < 0) days.push(g.day); });
+    if (days.indexOf(ui.nflDay) < 0) ui.nflDay = "All";
+    var list = d.games.filter(function (g) { return ui.nflDay === "All" || g.day === ui.nflDay; });
+    var html = '<div><h2>Week ' + d.week + " at a glance</h2>" + '<p class="lede">' + esc(d.oddsAsOf) + (d.publicAsOf ? ". " + esc(d.publicAsOf) : "") + (d.byes && d.byes.length ? ". Byes: " + esc(d.byes.join(", ")) : "") + ". NFL record " + recHtml(tally("nfl")) + "</p></div>";
+    html += '<div class="panels">' +
+      '<div class="panel"><h2>Best bets of the week</h2><ol>' + top.map(function (g) { return "<li><span>" + esc(g.bet.pick) + '<span class="tag">' + esc(g.away) + " at " + esc(g.home) + '</span></span><span class="num">' + esc(g.bet.odds) + "</span></li>"; }).join("") + "</ol></div>" +
+      '<div class="panel"><h2>Most likely TD scorers</h2><ol>' + tds.map(function (x) { return "<li><span>" + esc(x.t.player) + '<span class="tag">' + esc(x.t.team) + " " + esc(x.t.pos) + '</span></span><span class="num">' + x.t.pct + "%</span></li>"; }).join("") + "</ol></div>" +
+      '<div class="panel"><h2>QB rushing TD</h2><ol>' + (d.qbRush || []).map(function (q) { return "<li><span>" + esc(q.name) + '<span class="tag">' + esc(q.team) + '</span></span><span class="num">' + esc(q.odds) + '</span><span class="sub">' + esc(q.note) + "</span></li>"; }).join("") + "</ol></div>" +
+      '<div class="panel"><h2>Best defensive spots</h2><ol>' + defs.map(function (x) { return "<li><span>" + esc(x.team) + '<span class="tag">vs ' + esc(x.opp) + '</span></span><span class="num">opp ' + fmt(x.pts) + " pts</span></li>"; }).join("") + "</ol></div>" +
+      '<div class="panel"><h2>Public backing the underdog</h2>' + (dogs.length ? "<ol>" + dogs.map(function (x) { return "<li><span>" + esc(x.dog) + '<span class="tag">over ' + esc(x.fav) + '</span></span><span class="num">' + x.bets + '% bets</span><span class="sub">' + x.money + "% of the money on " + esc(x.dog) + " to win outright</span></li>"; }).join("") + "</ol>" : '<p class="note">The public is on the favorite in every game so far.</p>') + "</div></div>";
+    html += '<div><h2>Every game</h2><div class="chips" role="group" aria-label="Filter by day">' + days.map(function (x) { return '<button class="chip" type="button" id="nflday-' + x + '" aria-pressed="' + (x === ui.nflDay) + '" data-nflday="' + x + '">' + (x === "All" ? "All games" : x) + "</button>"; }).join("") + '</div><div class="grid">' + list.map(nflCard).join("") + "</div></div>";
+    el.innerHTML = html;
   }
 
-  document.getElementById("chips").addEventListener("click", function (e) {
-    var b = e.target.closest("[data-day]"); if (!b) return;
-    state.day = b.getAttribute("data-day");
-    try { localStorage.setItem("edge-day", state.day); } catch (err) {}
-    renderChips(); renderGrid();
-  });
+  /* ---------- Soccer ---------- */
+  function socPk(id, label, who, group, team, what, odds, conf, why, sub) {
+    return '<div class="pk' + pkClass(id) + '"><div class="pk-head"><small>' + label + "</small>" + chip(id) + "</div>" +
+      (who ? '<div class="who">' + avatar(who, group, team) + '<div><span class="what">' + esc(what) + "</span>" + (sub ? '<div class="subline">' + esc(sub) + "</div>" : "") + '<div class="metaline">' + (odds ? '<span class="num">' + esc(odds) + "</span>" : "") + confTag(conf) + chipNote(id) + "</div></div></div>"
+        : '<span class="what">' + esc(what) + '</span><div class="metaline">' + (odds ? '<span class="num">' + esc(odds) + "</span>" : "") + confTag(conf) + chipNote(id) + "</div>") +
+      '<span class="why">' + esc(why) + "</span></div>";
+  }
+  function socCard(g) {
+    var id = g.id, grp = g.league, nm = {}; nm[g.home] = g.homeName; nm[g.away] = g.awayName;
+    var top = '<div class="card-top"><div class="kick"><span class="lg">' + esc(LEAGUES[g.league]) + "</span><span>" + esc(g.kickoff) + '</span></div><div class="teams"><span class="team">' + esc(g.home) + '</span><span class="at">v</span><span class="team">' + esc(g.away) + "</span>" + scoreHtml(id, false) + '</div><div class="names">' + esc(g.homeName) + " v " + esc(g.awayName) + "</div></div>";
+    if (g.noPicks) return '<article class="card">' + top + '<div class="rows"><p class="note" style="margin:10px 0">Played before this board went up, so there are no picks for this match.</p></div></article>';
+    var p = g.prob;
+    var probs = '<div class="probs"><span class="sm">Win chance (Sportradar)</span><div class="sbar"><span class="h" style="flex:' + p.home + '">' + esc(g.home) + " " + Math.round(p.home) + '%</span><span class="dr" style="flex:' + p.draw + '">Draw ' + Math.round(p.draw) + '%</span><span class="a" style="flex:' + p.away + '">' + Math.round(p.away) + "% " + esc(g.away) + "</span></div></div>";
+    var r = g.result, resWhat = r.pick === "D" ? "Draw" : (nm[r.pick] || r.pick) + " to win";
+    var s = g.sot, sotWhat = s.player + " " + s.line + "+ shot" + (s.line > 1 ? "s" : "") + " on target";
+    return '<article class="card">' + top + probs +
+      '<div class="picks one">' + socPk(id + "-result", "Result", null, grp, null, resWhat, null, r.conf, r.why) + "</div>" +
+      '<div class="picks">' + socPk(id + "-goal", "Anytime goal scorer", g.goal.player, grp, g.goal.team, g.goal.player, g.goal.odds, g.goal.conf, g.goal.why, "To score") +
+      socPk(id + "-sot", "Shots on target", s.player, grp, s.team, s.player, s.odds, s.conf, s.why, sotWhat.replace(s.player + " ", "")) + "</div></article>";
+  }
+  function renderSoccer() {
+    var d = D.soccer, el = document.getElementById("v-soccer");
+    if (!d) { el.innerHTML = '<p class="state">Soccer picks couldn\'t load. Refresh the page to try again.</p>'; return; }
+    var withPicks = d.games.filter(function (g) { return !g.noPicks; });
+    var rank = { Strong: 0, Medium: 1, Lean: 2 };
+    var goals = withPicks.filter(function (g) { return g.goal.conf !== "Lean"; }).sort(function (a, b) { return rank[a.goal.conf] - rank[b.goal.conf]; }).slice(0, 7);
+    var sots = withPicks.filter(function (g) { return g.sot.conf !== "Lean"; }).sort(function (a, b) { return rank[a.sot.conf] - rank[b.sot.conf] || b.sot.line - a.sot.line; }).slice(0, 7);
+    var lgKeys = ["all", "epl", "laliga", "bundesliga"];
+    if (lgKeys.indexOf(ui.league) < 0) ui.league = "all";
+    var list = d.games.filter(function (g) { return ui.league === "all" || g.league === ui.league; });
+    list = list.filter(function (g) { return !g.noPicks; }).concat(list.filter(function (g) { return g.noPicks; }));
+    var html = '<div><h2>Soccer · ' + esc(d.window) + "</h2>" + '<p class="lede">' + esc(d.note) + " Soccer record " + recHtml(tally("soccer")) + "</p></div>";
+    html += '<div class="panels"><div class="panel"><h2>Top goal scorer picks</h2><ol>' + goals.map(function (g) { return '<li><span class="who">' + avatar(g.goal.player, g.league, g.goal.team, true) + "<span>" + esc(g.goal.player) + '<span class="tag">' + esc(g.goal.team) + '</span></span></span><span class="num">' + esc(g.goal.odds || g.goal.conf) + "</span></li>"; }).join("") + "</ol></div>" +
+      '<div class="panel"><h2>Top shots-on-target picks</h2><ol>' + sots.map(function (g) { return '<li><span class="who">' + avatar(g.sot.player, g.league, g.sot.team, true) + "<span>" + esc(g.sot.player) + '<span class="tag">' + g.sot.line + '+ SOT</span></span></span><span class="num">' + esc(g.sot.odds || g.sot.conf) + "</span></li>"; }).join("") + "</ol></div></div>";
+    html += '<div><h2>Every match</h2><div class="chips" role="group" aria-label="Filter by league">' + lgKeys.map(function (k) { return '<button class="chip" type="button" id="lg-' + k + '" aria-pressed="' + (k === ui.league) + '" data-league="' + k + '">' + (k === "all" ? "All leagues" : LEAGUES[k]) + "</button>"; }).join("") + '</div><div class="grid">' + list.map(socCard).join("") + "</div></div>";
+    el.innerHTML = html;
+  }
 
-  fetch("data.json", { cache: "no-store" }).then(function (r) {
-    if (!r.ok) throw new Error(r.status); return r.json();
-  }).then(function (d) {
-    data = d; renderHeader(); renderPanels(); renderChips(); renderGrid();
-  }).catch(function () {
-    document.getElementById("grid").innerHTML = '<p class="state">This week\'s picks couldn\'t load. Refresh the page to try again.</p>';
+  /* ---------- NBA ---------- */
+  function nbaCard(g) {
+    var id = g.id;
+    var top = '<div class="card-top"><div class="kick"><span>' + esc(g.tip) + '</span></div><div class="teams"><span class="team">' + esc(g.away) + '</span><span class="at">at</span><span class="team">' + esc(g.home) + "</span>" + scoreHtml(id, true) + '</div><div class="names">' + esc(g.awayName) + " at " + esc(g.homeName) + "</div></div>";
+    var probs = g.prob ? '<div class="probs"><span class="sm">Win chance (Sportradar)</span><div class="sbar"><span class="a" style="flex:' + g.prob.away + '">' + esc(g.away) + " " + Math.round(g.prob.away) + '%</span><span class="h" style="flex:' + g.prob.home + '">' + Math.round(g.prob.home) + "% " + esc(g.home) + "</span></div></div>" : "";
+    var props = g.props.map(function (p, i) {
+      var pid = id + "-p" + (i + 1);
+      return '<div class="pk' + pkClass(pid) + '"><div class="pk-head"><small>Most likely prop</small>' + chip(pid) + '</div><div class="who">' + avatar(p.player, "nba", p.team) +
+        '<div><span class="what">' + esc(p.player) + '</span><div class="subline">' + esc(p.prop) + '</div><div class="metaline"><span class="num">Avg ' + esc(p.avg) + " " + esc(p.stat) + "</span>" + confTag(p.conf) + chipNote(pid) + "</div></div></div>" +
+        '<span class="why">' + esc(p.why) + "</span></div>";
+    }).join("");
+    return '<article class="card">' + top + probs + '<div class="picks one">' + props + "</div></article>";
+  }
+  function renderNBA() {
+    var d = D.nba, el = document.getElementById("v-nba");
+    if (!d) { el.innerHTML = '<p class="state">NBA picks couldn\'t load. Refresh the page to try again.</p>'; return; }
+    var rank = { Strong: 0, Medium: 1, Lean: 2 };
+    var all = []; d.games.forEach(function (g) { g.props.forEach(function (p) { all.push({ p: p, g: g }); }); });
+    all.sort(function (a, b) { return rank[a.p.conf] - rank[b.p.conf]; });
+    var html = '<div><h2>NBA · ' + esc(d.slate) + "</h2>" + '<p class="lede">' + esc(d.note) + " NBA record " + recHtml(tally("nba")) + "</p></div>";
+    html += '<div class="panels"><div class="panel"><h2>Tonight\'s best props</h2><ol>' + all.slice(0, 7).map(function (x) { return '<li><span class="who">' + avatar(x.p.player, "nba", x.p.team, true) + "<span>" + esc(x.p.player) + '<span class="tag">' + esc(x.p.prop) + '</span></span></span><span class="num">avg ' + esc(x.p.avg) + "</span></li>"; }).join("") + "</ol></div></div>";
+    html += '<div><h2>Every game</h2><div class="grid">' + (d.games.length ? d.games.map(nbaCard).join("") : '<p class="state">No NBA games on this slate.</p>') + "</div></div>";
+    el.innerHTML = html;
+  }
+
+  /* ---------- MLB ---------- */
+  function mlbCard(g) {
+    var id = g.id;
+    var top = '<div class="card-top"><div class="kick"><span>' + esc(g.first) + '</span></div><div class="teams"><span class="team">' + esc(g.away) + '</span><span class="at">at</span><span class="team">' + esc(g.home) + "</span>" + scoreHtml(id, true) + '</div><div class="names">' + esc(g.awayName) + " at " + esc(g.homeName) + "</div></div>";
+    var k = g.k, hr = g.hr;
+    return '<article class="card">' + top + '<div class="picks">' +
+      (k ? '<div class="pk' + pkClass(id + "-k") + '"><div class="pk-head"><small>Strikeouts</small>' + chip(id + "-k") + '</div><div class="who">' + avatar(k.pitcher, "mlb", k.team) + '<div><span class="what">' + esc(k.pitcher) + " " + esc(k.side) + " " + esc(k.line) + ' Ks</span><div class="metaline">' + (k.odds ? '<span class="num">' + esc(k.odds) + "</span>" : "") + confTag(k.conf) + chipNote(id + "-k") + '</div></div></div><span class="why">' + esc(k.why) + "</span></div>" : "") +
+      (hr ? '<div class="pk' + pkClass(id + "-hr") + '"><div class="pk-head"><small>Most likely home run</small>' + chip(id + "-hr") + '</div><div class="who">' + avatar(hr.player, "mlb", hr.team) + '<div><span class="what">' + esc(hr.player) + '</span><div class="metaline">' + (hr.odds ? '<span class="num">' + esc(hr.odds) + "</span>" : "") + confTag(hr.conf) + chipNote(id + "-hr") + '</div></div></div><span class="why">' + esc(hr.why) + "</span></div>" : "") +
+      "</div></article>";
+  }
+  function renderMLB() {
+    var d = D.mlb, el = document.getElementById("v-mlb");
+    if (!d) { el.innerHTML = '<p class="state">MLB picks couldn\'t load. Refresh the page to try again.</p>'; return; }
+    var how = '<div class="howlist"><div class="how"><b>Strikeout over/under</b><span>Each starting pitcher\'s strikeout line, with the side we like and why: recent K rate, the opposing lineup\'s strikeout rate, and pitch counts.</span></div><div class="how"><b>Most likely home run</b><span>The hitter in each game most likely to go deep, based on power numbers, the pitcher he faces, the ballpark and the weather.</span></div></div>';
+    if (d.season === "off" || !d.games.length) {
+      var o = d.offseason || {};
+      el.innerHTML = '<div class="offseason"><span class="lg">Offseason</span><h3>' + esc(o.headline || "MLB is in its offseason") + "</h3><p>" + esc(o.detail || "") + "</p><p><b>" + esc(o.returns || "") + "</b></p></div><div><h2>What you'll get each day</h2>" + how + "</div>";
+      return;
+    }
+    el.innerHTML = '<div><h2>MLB · ' + esc(d.slate || "") + "</h2>" + '<p class="lede">' + esc(d.note || "") + " MLB record " + recHtml(tally("mlb")) + '</p></div><div class="grid">' + d.games.map(mlbCard).join("") + "</div>";
+  }
+
+  /* ---------- Results ---------- */
+  function renderResults() {
+    var el = document.getElementById("v-results"), picks = D.results.picks || {};
+    var sports = [["All sports", null], ["NFL", "nfl"], ["Soccer", "soccer"], ["NBA", "nba"], ["MLB", "mlb"]];
+    var html = '<div><h2>Pick record</h2><p class="lede">Every graded pick, counted once even when the same bet appears in two places on a card.</p></div><div class="tally">' + sports.map(function (s) {
+      var t = tally(s[1]), n = t.hit + t.miss, pct = n ? Math.round(100 * t.hit / n) + "% hit rate" : "No graded picks yet";
+      return '<div class="tl"><span class="sm">' + s[0] + '</span><div class="big"><span class="w">' + t.hit + '</span>–<span class="l">' + t.miss + "</span>" + (t.push ? "–" + t.push : "") + '</div><span class="note">' + pct + "</span></div>";
+    }).join("") + "</div>";
+    var ids = Object.keys(picks).sort(function (a, b) { return String(picks[b].date).localeCompare(String(picks[a].date)) || a.localeCompare(b); });
+    var seen = {};
+    var rows = ids.filter(function (id) { var game = id.replace(/-(win|bet|prop|td|result|goal|sot|p\d+|k|hr)$/, ""), k = game + "|" + picks[id].label; if (seen[k]) return false; seen[k] = 1; return true; }).slice(0, 60);
+    html += '<div><h2>Latest results</h2><div class="reslist">' + (rows.length ? rows.map(function (id) {
+      var p = picks[id];
+      return '<div class="resrow"><span class="sm">' + esc((p.sport || "").toUpperCase()) + " · " + esc(fmtDate(p.date)) + '</span><div class="lbl"><b>' + esc(p.label) + "</b>" + (p.note ? "<span>" + esc(p.note) + "</span>" : "") + "</div>" + chip(id) + "</div>";
+    }).join("") : '<p class="state" style="padding:16px">No picks have been graded yet.</p>') + "</div></div>";
+    el.innerHTML = html;
+  }
+
+  /* ---------- routing ---------- */
+  function counts() {
+    var n = { nfl: D.nfl ? D.nfl.games.length : 0, soccer: D.soccer ? D.soccer.games.filter(function (g) { return !g.noPicks; }).length : 0, nba: D.nba ? D.nba.games.length : 0, mlb: D.mlb ? D.mlb.games.length : 0 };
+    document.querySelectorAll(".tab").forEach(function (a) {
+      var v = a.getAttribute("data-view"), c = a.querySelector(".cnt");
+      if (n[v] != null) { if (!c) { c = document.createElement("span"); c.className = "cnt"; a.appendChild(c); } c.textContent = n[v] ? n[v] : (v === "mlb" ? "off" : ""); }
+    });
+  }
+  function current() { var h = (location.hash || "").replace("#", ""); return VIEWS.indexOf(h) >= 0 ? h : "nfl"; }
+  function show() {
+    var v = current();
+    VIEWS.forEach(function (x) { document.getElementById("v-" + x).hidden = x !== v; });
+    document.querySelectorAll(".tab").forEach(function (a) { if (a.getAttribute("data-view") === v) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+  }
+  function renderAll() { renderMeta(); renderNFL(); renderSoccer(); renderNBA(); renderMLB(); renderResults(); counts(); show(); }
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-nflday]");
+    if (b) { ui.nflDay = b.getAttribute("data-nflday"); try { localStorage.setItem("si-nflday", ui.nflDay); } catch (x) {} renderNFL(); return; }
+    b = e.target.closest("[data-league]");
+    if (b) { ui.league = b.getAttribute("data-league"); try { localStorage.setItem("si-league", ui.league); } catch (x) {} renderSoccer(); }
   });
+  window.addEventListener("hashchange", show);
+
+  function get(name) { return fetch(name, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).catch(function () { return null; }); }
+  function load() {
+    return Promise.all([get("nfl.json"), get("soccer.json"), get("nba.json"), get("mlb.json"), get("results.json")]).then(function (a) {
+      D.nfl = a[0]; D.soccer = a[1]; D.nba = a[2]; D.mlb = a[3]; D.results = a[4] || { games: {}, picks: {} };
+      renderAll();
+    });
+  }
+  show();
+  load();
+  setInterval(function () { get("results.json").then(function (r) { if (r && r.updated !== D.results.updated) { D.results = r; renderAll(); } }); }, 120000);
 })();
 </script>
-
-</body></html>
