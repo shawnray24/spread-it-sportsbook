@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01T08:40:14-08:00",
+ "updated": "2026-11-01T09:14:19-08:00",
  "games": {
   "nfl-2026-w8-CAR-GB": {
    "status": "final",
@@ -184,8 +184,14 @@
   "soc-laliga-2026-11-01-RAC-RMA": {
    "status": "live",
    "home": 0,
-   "away": 2,
+   "away": 3,
    "detail": "2nd half"
+  },
+  "soc-bundesliga-2026-11-01-SGE-HSV": {
+   "status": "live",
+   "home": 1,
+   "away": 1,
+   "detail": "Live"
   }
  },
  "picks": {
