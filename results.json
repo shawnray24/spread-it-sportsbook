@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01T08:14:52-08:00",
+ "updated": "2026-11-01T08:40:14-08:00",
  "games": {
   "nfl-2026-w8-CAR-GB": {
    "status": "final",
@@ -176,10 +176,10 @@
    "detail": "FT"
   },
   "soc-bundesliga-2026-11-01-UNI-KOE": {
-   "status": "live",
+   "status": "final",
    "home": 1,
-   "away": 0,
-   "detail": "2nd half"
+   "away": 1,
+   "detail": "FT"
   },
   "soc-laliga-2026-11-01-RAC-RMA": {
    "status": "live",
@@ -650,6 +650,20 @@
    "date": "2026-11-01",
    "label": "Isaac Romero to score",
    "note": "Off injured 27′; SEV goal: Kike Salas"
+  },
+  "soc-bundesliga-2026-11-01-UNI-KOE-result": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-11-01",
+   "label": "1. FC Köln to win",
+   "note": "UNI 1–1 KOE"
+  },
+  "soc-bundesliga-2026-11-01-UNI-KOE-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-11-01",
+   "label": "Saïd El Mala to score",
+   "note": "Goals: Haberer, Malek El Mala (his assist)"
   }
  }
 }
