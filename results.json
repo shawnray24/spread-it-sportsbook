@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T01:30:00-07:00",
+ "updated": "2026-11-01T07:16:27-08:00",
  "games": {
   "nfl-2026-w8-CAR-GB": {
    "status": "final",
@@ -16,6 +16,162 @@
   "soc-bundesliga-2026-10-30-SVE-M05": {
    "status": "final",
    "home": 4,
+   "away": 1,
+   "detail": "FT"
+  },
+  "soc-epl-2026-10-31-CFC-MUN": {
+   "status": "final",
+   "home": 2,
+   "away": 0,
+   "detail": "FT"
+  },
+  "soc-laliga-2026-10-31-LEV-ATM": {
+   "status": "final",
+   "home": 0,
+   "away": 2,
+   "detail": "FT"
+  },
+  "soc-bundesliga-2026-10-31-SCH-RBL": {
+   "status": "final",
+   "home": 0,
+   "away": 2,
+   "detail": "FT"
+  },
+  "soc-bundesliga-2026-10-31-SVW-TSG": {
+   "status": "final",
+   "home": 2,
+   "away": 0,
+   "detail": "FT"
+  },
+  "soc-bundesliga-2026-10-31-LEV-VFB": {
+   "status": "final",
+   "home": 2,
+   "away": 4,
+   "detail": "FT"
+  },
+  "soc-epl-2026-10-31-BOU-LEE": {
+   "status": "final",
+   "home": 2,
+   "away": 0,
+   "detail": "FT"
+  },
+  "soc-epl-2026-10-31-BRE-NFO": {
+   "status": "final",
+   "home": 2,
+   "away": 0,
+   "detail": "FT"
+  },
+  "soc-epl-2026-10-31-COV-SUN": {
+   "status": "final",
+   "home": 3,
+   "away": 1,
+   "detail": "FT"
+  },
+  "soc-epl-2026-10-31-HUL-IPS": {
+   "status": "final",
+   "home": 2,
+   "away": 2,
+   "detail": "FT"
+  },
+  "soc-epl-2026-10-31-MCI-BRI": {
+   "status": "final",
+   "home": 0,
+   "away": 1,
+   "detail": "FT"
+  },
+  "soc-laliga-2026-10-31-RVC-RCC": {
+   "status": "final",
+   "home": 3,
+   "away": 2,
+   "detail": "FT"
+  },
+  "soc-bundesliga-2026-10-31-FCA-SCF": {
+   "status": "final",
+   "home": 1,
+   "away": 2,
+   "detail": "FT"
+  },
+  "soc-bundesliga-2026-10-31-BMG-PAD": {
+   "status": "final",
+   "home": 0,
+   "away": 0,
+   "detail": "FT"
+  },
+  "soc-epl-2026-10-31-TOT-CRY": {
+   "status": "final",
+   "home": 2,
+   "away": 0,
+   "detail": "FT"
+  },
+  "soc-bundesliga-2026-10-31-BMU-BVB": {
+   "status": "final",
+   "home": 2,
+   "away": 2,
+   "detail": "FT"
+  },
+  "soc-laliga-2026-10-31-RBB-MCF": {
+   "status": "final",
+   "home": 2,
+   "away": 1,
+   "detail": "FT"
+  },
+  "soc-laliga-2026-10-31-BAR-ALA": {
+   "status": "final",
+   "home": 6,
+   "away": 1,
+   "detail": "FT"
+  },
+  "soc-epl-2026-10-31-AVL-FUL": {
+   "status": "final",
+   "home": 1,
+   "away": 1,
+   "detail": "FT"
+  },
+  "nba-2026-10-31-POR-UTA": {
+   "status": "final",
+   "away": 112,
+   "home": 90,
+   "detail": "Final"
+  },
+  "nba-2026-10-31-PHI-CHA": {
+   "status": "final",
+   "away": 109,
+   "home": 104,
+   "detail": "Final"
+  },
+  "nba-2026-10-31-ATL-NOP": {
+   "status": "final",
+   "away": 99,
+   "home": 121,
+   "detail": "Final"
+  },
+  "nba-2026-10-31-CLE-MIL": {
+   "status": "final",
+   "away": 136,
+   "home": 111,
+   "detail": "Final"
+  },
+  "nba-2026-10-31-SAC-MEM": {
+   "status": "final",
+   "away": 105,
+   "home": 136,
+   "detail": "Final"
+  },
+  "nba-2026-10-31-MIN-SAS": {
+   "status": "final",
+   "away": 111,
+   "home": 121,
+   "detail": "Final"
+  },
+  "nba-2026-10-31-OKC-HOU": {
+   "status": "final",
+   "away": 98,
+   "home": 119,
+   "detail": "Final"
+  },
+  "soc-laliga-2026-11-01-GET-SEV": {
+   "status": "final",
+   "home": 3,
    "away": 1,
    "detail": "FT"
   }
@@ -48,6 +204,440 @@
    "date": "2026-10-29",
    "label": "Josh Jacobs anytime TD",
    "note": "2 TDs (1 rush, 1 catch)"
+  },
+  "soc-epl-2026-10-31-CFC-MUN-result": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Chelsea to win",
+   "note": "CFC 2–0 MUN"
+  },
+  "soc-epl-2026-10-31-CFC-MUN-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Bryan Mbeumo to score",
+   "note": "Man United scored 0"
+  },
+  "soc-laliga-2026-10-31-LEV-ATM-result": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Atlético Madrid to win",
+   "note": "ATM won 2–0 at LEV"
+  },
+  "soc-laliga-2026-10-31-LEV-ATM-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Álex Baena to score",
+   "note": "Goals: Grimaldo, G. Simeone"
+  },
+  "soc-bundesliga-2026-10-31-SCH-RBL-result": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "RB Leipzig to win",
+   "note": "RBL won 2–0 at SCH"
+  },
+  "soc-bundesliga-2026-10-31-SCH-RBL-goal": {
+   "r": "void",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Christopher Nkunku to score",
+   "note": "Unused sub, did not play"
+  },
+  "soc-bundesliga-2026-10-31-SCH-RBL-sot": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Antonio Nusa 1+ shots on target",
+   "note": "Scored a penalty (37')"
+  },
+  "soc-bundesliga-2026-10-31-SVW-TSG-result": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Hoffenheim to win",
+   "note": "SVW 2–0 TSG"
+  },
+  "soc-bundesliga-2026-10-31-SVW-TSG-goal": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Niclas Füllkrug to score",
+   "note": "Scored opener in 2–0 win"
+  },
+  "soc-bundesliga-2026-10-31-SVW-TSG-sot": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Niclas Füllkrug 1+ shots on target",
+   "note": "Scored (goal on target)"
+  },
+  "soc-bundesliga-2026-10-31-LEV-VFB-result": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Bayer Leverkusen to win",
+   "note": "VFB won 4–2 at LEV"
+  },
+  "soc-bundesliga-2026-10-31-LEV-VFB-goal": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Patrik Schick to score",
+   "note": "Scored in 2–4 loss"
+  },
+  "soc-epl-2026-10-31-BOU-LEE-result": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Bournemouth to win",
+   "note": "BOU 2–0 LEE"
+  },
+  "soc-epl-2026-10-31-BRE-NFO-result": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Brentford to win",
+   "note": "BRE 2–0 NFO"
+  },
+  "soc-epl-2026-10-31-COV-SUN-result": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Sunderland to win",
+   "note": "COV 3–1 SUN"
+  },
+  "soc-epl-2026-10-31-HUL-IPS-result": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Ipswich Town to win",
+   "note": "HUL 2–2 IPS"
+  },
+  "soc-epl-2026-10-31-HUL-IPS-sot": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Julio Enciso 1+ shots on target",
+   "note": "Scored (74')"
+  },
+  "soc-epl-2026-10-31-MCI-BRI-result": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Manchester City to win",
+   "note": "BRI won 1–0 at MCI"
+  },
+  "soc-epl-2026-10-31-MCI-BRI-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Erling Haaland to score",
+   "note": "City scored 0"
+  },
+  "soc-laliga-2026-10-31-RVC-RCC-result": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Rayo Vallecano to win",
+   "note": "Rayo 3–2 vs Racing Santander"
+  },
+  "soc-laliga-2026-10-31-RVC-RCC-goal": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Sergio Camello to score",
+   "note": "2 goals (43', 47')"
+  },
+  "soc-laliga-2026-10-31-RVC-RCC-sot": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Sergio Camello 1+ shots on target",
+   "note": "Scored twice"
+  },
+  "soc-bundesliga-2026-10-31-FCA-SCF-result": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Freiburg to win",
+   "note": "SCF won 2–1 at FCA"
+  },
+  "soc-bundesliga-2026-10-31-FCA-SCF-goal": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Michael Gregoritsch to score",
+   "note": "Scored (18')"
+  },
+  "soc-bundesliga-2026-10-31-FCA-SCF-sot": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Igor Matanović 1+ shots on target",
+   "note": "Scored (65')"
+  },
+  "soc-bundesliga-2026-10-31-BMG-PAD-result": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Mönchengladbach to win",
+   "note": "BMG 0–0 PAD"
+  },
+  "soc-bundesliga-2026-10-31-BMG-PAD-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Shuto Machino to score",
+   "note": "0–0, played 69 min"
+  },
+  "soc-epl-2026-10-31-CFC-MUN-sot": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Pedro Neto 1+ shots on target",
+   "note": "2 shots on target"
+  },
+  "soc-epl-2026-10-31-BOU-LEE-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Marcus Tavernier to score",
+   "note": "Goals: Evanilson, Adli"
+  },
+  "soc-epl-2026-10-31-BRE-NFO-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Kevin Schade to score",
+   "note": "Goals: Milenković (OG), Igor Thiago"
+  },
+  "soc-epl-2026-10-31-COV-SUN-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Brian Brobbey to score",
+   "note": "SUN goal: Le Fée"
+  },
+  "soc-epl-2026-10-31-HUL-IPS-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Mohamed Belloumi to score",
+   "note": "Hull goals: Iroegbunam, McBurnie"
+  },
+  "soc-epl-2026-10-31-TOT-CRY-result": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Tottenham Hotspur to win",
+   "note": "TOT 2–0 CRY"
+  },
+  "soc-epl-2026-10-31-TOT-CRY-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Dominic Solanke to score",
+   "note": "Goals: Gray, van Hecke"
+  },
+  "soc-bundesliga-2026-10-31-BMU-BVB-result": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Bayern Munich to win",
+   "note": "BMU 2–2 BVB"
+  },
+  "soc-bundesliga-2026-10-31-BMU-BVB-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Harry Kane to score",
+   "note": "Missed a penalty; BMU goals: Laimer, Upamecano"
+  },
+  "soc-laliga-2026-10-31-RBB-MCF-result": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Real Betis to win",
+   "note": "RBB 2–1 MCF"
+  },
+  "soc-laliga-2026-10-31-RBB-MCF-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Abde Ezzalzouli to score",
+   "note": "Goals: Bartra, Fornals"
+  },
+  "soc-laliga-2026-10-31-BAR-ALA-result": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Barcelona to win",
+   "note": "BAR 6–1 ALA"
+  },
+  "soc-laliga-2026-10-31-BAR-ALA-goal": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Raphinha to score",
+   "note": "2 goals (8', 41')"
+  },
+  "soc-laliga-2026-10-31-BAR-ALA-sot": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Lamine Yamal 1+ shots on target",
+   "note": "Scored twice (45+1', 64')"
+  },
+  "soc-epl-2026-10-31-AVL-FUL-result": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Aston Villa to win",
+   "note": "AVL 1–1 FUL"
+  },
+  "soc-epl-2026-10-31-AVL-FUL-goal": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Nicolas Jackson to score",
+   "note": "Scored (39')"
+  },
+  "nba-2026-10-31-POR-UTA-p1": {
+   "r": "miss",
+   "sport": "nba",
+   "date": "2026-10-31",
+   "label": "Keyonte George 20+ points",
+   "note": "8 points"
+  },
+  "nba-2026-10-31-PHI-CHA-p1": {
+   "r": "hit",
+   "sport": "nba",
+   "date": "2026-10-31",
+   "label": "Tyrese Maxey 25+ points",
+   "note": "38 points"
+  },
+  "soc-bundesliga-2026-10-31-LEV-VFB-sot": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Ermedin Demirović 1+ shots on target",
+   "note": "Scored twice (14', 65')"
+  },
+  "nba-2026-10-31-ATL-NOP-p1": {
+   "r": "miss",
+   "sport": "nba",
+   "date": "2026-10-31",
+   "label": "Jalen Johnson 8+ rebounds",
+   "note": "7 rebounds (left with ankle sprain)"
+  },
+  "nba-2026-10-31-CLE-MIL-p1": {
+   "r": "miss",
+   "sport": "nba",
+   "date": "2026-10-31",
+   "label": "Donovan Mitchell 20+ points",
+   "note": "15 points in 24 min (CLE won 136–111)"
+  },
+  "nba-2026-10-31-SAC-MEM-p1": {
+   "r": "hit",
+   "sport": "nba",
+   "date": "2026-10-31",
+   "label": "Domantas Sabonis 12+ rebounds",
+   "note": "14 rebounds"
+  },
+  "nba-2026-10-31-MIN-SAS-p1": {
+   "r": "miss",
+   "sport": "nba",
+   "date": "2026-10-31",
+   "label": "Victor Wembanyama 10+ rebounds",
+   "note": "7 rebounds"
+  },
+  "nba-2026-10-31-OKC-HOU-p1": {
+   "r": "miss",
+   "sport": "nba",
+   "date": "2026-10-31",
+   "label": "Alperen Şengün 20+ points",
+   "note": "16 points"
+  },
+  "soc-epl-2026-10-31-BOU-LEE-sot": {
+   "r": "hit",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Rayan 1+ shots on target",
+   "note": "1 shot on target (42' saved)"
+  },
+  "soc-epl-2026-10-31-BRE-NFO-sot": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Kevin Schade 1+ shots on target",
+   "note": "0 shots on target"
+  },
+  "soc-epl-2026-10-31-COV-SUN-sot": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Brian Brobbey 1+ shots on target",
+   "note": "0 on target (2 shots off)"
+  },
+  "soc-epl-2026-10-31-MCI-BRI-sot": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Erling Haaland 2+ shots on target",
+   "note": "1 shot on target"
+  },
+  "soc-epl-2026-10-31-TOT-CRY-sot": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Mohammed Kudus 1+ shots on target",
+   "note": "0 on target (3 shots off)"
+  },
+  "soc-laliga-2026-10-31-LEV-ATM-sot": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Álex Baena 1+ shots on target",
+   "note": "0 on target (1 shot off)"
+  },
+  "soc-laliga-2026-10-31-RBB-MCF-sot": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Antony 1+ shots on target",
+   "note": "0 on target in 29 min off bench"
+  },
+  "soc-bundesliga-2026-10-31-BMG-PAD-sot": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Shuto Machino 1+ shots on target",
+   "note": "No shots in 69 min"
+  },
+  "soc-bundesliga-2026-10-31-BMU-BVB-sot": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-10-31",
+   "label": "Michael Olise 2+ shots on target",
+   "note": "0 on target (hit post)"
+  },
+  "soc-laliga-2026-11-01-GET-SEV-result": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-11-01",
+   "label": "Sevilla to win",
+   "note": "GET 3–1 SEV"
+  },
+  "soc-laliga-2026-11-01-GET-SEV-goal": {
+   "r": "miss",
+   "sport": "soccer",
+   "date": "2026-11-01",
+   "label": "Isaac Romero to score",
+   "note": "Off injured 27′; SEV goal: Kike Salas"
   }
  }
 }
